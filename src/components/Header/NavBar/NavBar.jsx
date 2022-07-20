@@ -2,13 +2,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // import style
 import "./NavBar.scss";
-import logo from "/home/angell/projects_all/react-CoderHouse/project/Panda-NFT/src/images/header/logo.svg";
 
 export function NavBar() {
   return (
     <nav className="navigation">
       <a href="#">
-        <img src={logo} alt="Logo" />
+        <img src={'https://raw.githubusercontent.com/Angel-Landkoer/The-pictures/master/reac-Pandas_NFT/logo%20(8).png'} alt="Logo" />
       </a>
       <ul className="listsNavigation">
         <li key={"home"}>
