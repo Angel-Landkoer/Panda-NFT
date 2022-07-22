@@ -12,7 +12,6 @@ export function Main() {
   return (
     <main>
       <section className="main">
-        <CardNFT />
       </section>
     </main>
   );

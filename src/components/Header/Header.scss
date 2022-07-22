@@ -7,6 +7,18 @@
 }
 
 .header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 900px;
+  grid-template-areas: 
+  "navigation navigation"
+  " Discover card"
+  ;
+  align-items: flex-start;
+
+  width: 100%;
+  height: auto;
+
   font-family: "Poppins", sans-serif;
 
   color: aliceblue;

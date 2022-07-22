@@ -1,0 +1,36 @@
+.infoCreator {
+  display: grid;
+  grid-area: infoCreator;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  grid-template-areas:
+    "imagen creator price"
+    "imagen creator price";
+
+    padding: 15px;
+
+    font-size: 14px;
+
+  & img {
+    grid-area: imagen;
+
+    border-radius: 10px;
+  }
+
+  .sectionCreator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: creator;
+  }
+
+  .sectionPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: price;
+  }
+}
