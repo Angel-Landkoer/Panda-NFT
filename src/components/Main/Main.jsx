@@ -8,12 +8,14 @@ import "./Main.scss";
 
 // import components
 import { CardsNFT } from './CardsNFT/CardsNFT';
+import { SectionLogos } from './SectionLogos/SectionLogos'
 
 
 export function Main() {
   return (
-    <main>j
+    <main>
       <section className="main">
+        <SectionLogos />
       </section>
     </main>
   );
