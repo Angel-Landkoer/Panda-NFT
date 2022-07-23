@@ -6,11 +6,13 @@ import { useState, useEffect } from "react";
 // import styles
 import "./Main.scss";
 
-import { CardNFT } from "./Card-NFT/Card-NFT";
+// import components
+import { CardsNFT } from './CardsNFT/CardsNFT';
+
 
 export function Main() {
   return (
-    <main>
+    <main>j
       <section className="main">
       </section>
     </main>
