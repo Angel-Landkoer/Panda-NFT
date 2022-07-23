@@ -1,0 +1,32 @@
+.cards {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+
+  width: 380px;
+  height: 368px;
+  margin: 10px;
+
+  border-radius: 10px;
+  background-color: #272D37;
+
+  & figure {
+    margin-bottom: 40px;
+  }
+
+  & h3 {
+    font-size: 24px;
+  }
+
+  & p {
+    margin: 20px 0;
+    width: 290px;
+
+    font-size: 14px;
+    text-align: center;
+
+    color: Gray;
+  }
+}
