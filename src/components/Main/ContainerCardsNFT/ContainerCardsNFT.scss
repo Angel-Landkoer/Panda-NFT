@@ -1,0 +1,42 @@
+.containerCards {
+  color: aliceblue;
+
+  .titleBtn_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 50px 85px;
+
+    & h3 {
+      font-size: 48px;
+    }
+
+    & button {
+      width: 176px;
+      height: 56px;
+      border: 1px #1E50FF solid;
+
+      font-size: 16px;
+
+      color: aliceblue;
+      border-radius: 10px;
+      background-color: transparent;
+    }
+
+    & button:hover {
+        border: 2px #1E50FF solid;
+    }
+
+    & button:active {
+        border: 3px #1E50FF solid;
+    }
+  }
+
+  .containerCards_flex {
+    display: flex;
+    flex-flow: row wrap;
+
+    padding: 20px;
+  }
+}
