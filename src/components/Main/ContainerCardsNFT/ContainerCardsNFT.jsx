@@ -13,7 +13,7 @@ export function ContainerCardsNFT({ title }) {
   useEffect(() => {
     async function apiNFTs() {
       const response = await fetch(
-        "https://api.giphy.com/v1/gifs/trending?api_key=dS6ZnDy8xSpY1Ul63p88KSDnASS9X5Hb&limit=100&rating=g"
+        "https://api.giphy.com/v1/gifs/trending?api_key=dS6ZnDy8xSpY1Ul63p88KSDnASS9X5Hb&limit=50&rating=g"
       );
       const data = await response.json();
 

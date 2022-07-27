@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,AAAC,CACL,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CAEnB,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CAab,AApBD,AASE,MATI,CASF,MAAM,AAAC,CAEP,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,IAAI,CAOb,AAnBH,AAcI,MAdE,CASF,MAAM,CAKJ,GAAG,AAAC,CACJ,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,MAAM,CAChB",
+    "sources": [
+        "../../src/components/Main/SectionLogos/SectionLogos.scss"
+    ],
+    "names": [],
+    "file": "SectionLogos.min.css"
+}

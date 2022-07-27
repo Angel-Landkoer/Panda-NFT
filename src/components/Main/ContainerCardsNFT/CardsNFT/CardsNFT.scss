@@ -1,19 +1,18 @@
 .cardsNFTs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-template-areas: 
-  "pictureNFT pictureNFT pictureNFT"
-  " textNFT textNFT buttonBSC"
-  "infoCreator infoCreator infoCreator"
-  ;
+  grid-template-areas:
+    "pictureNFT pictureNFT pictureNFT pictureNFT pictureNFT"
+    " textNFT textNFT textNFT stocks buttonBSC"
+    "infoCreator infoCreator infoCreator infoCreator infoCreator";
   justify-content: center;
   align-items: center;
   align-content: center;
   grid-area: card;
 
   padding: 20px;
-  width: 384px;
+  width: 420px;
   height: 550px;
   margin: 50px auto 0 auto;
 
@@ -22,10 +21,40 @@
   border-radius: 10px;
   background-color: #272d37;
 
+  .stocks {
+    grid-area: stocks;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & span {
+      padding: 5px;
+    }
+
+    .less {
+      width: 40px;
+      height: 40px;
+    }
+
+    .less:hover {
+      background-color: #3b5edb;
+    }
+
+    .more {
+      width: 40px;
+      height: 40px;
+    }
+
+    .more:hover {
+      background-color: #3b5edb;
+    }
+  }
+
   .pictureNFT {
     grid-area: pictureNFT;
 
     padding: 20px;
+    margin: 0 auto;
     width: 336px;
     height: 352px;
 

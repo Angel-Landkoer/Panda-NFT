@@ -15,7 +15,7 @@ export function Component({ creator, price }) {
         <div className="containerPrice">
           <span>Current Bid</span>
           <span>
-            <b>{price}</b>
+            <b>{price} ETH</b>
           </span>
         </div>
       </section>
