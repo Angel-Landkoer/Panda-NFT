@@ -1,0 +1,25 @@
+.logoContext {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  grid-area: logoContext;
+
+  padding: 20px 50px;
+  width: auto;
+  height: 192px;
+
+  & figure {
+    padding: 10px 10px 10px 0;
+    margin-bottom: 10px;
+  }
+
+  & p {
+    width: 393px;
+    height: 128px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
