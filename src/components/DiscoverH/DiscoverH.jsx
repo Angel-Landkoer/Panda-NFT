@@ -1,9 +1,9 @@
-import "./Discover.scss";
+import "./DiscoverH.scss";
 
-export function Discover() {
+export function DiscoverH() {
   return (
     <>
-      <section className="Discover">
+      <section className="discoverH">
         <h1>Discover a New Era of Crypto Currency</h1>
         <p>
           Panda NFT is the primier marketplace for NFT, which are digital items

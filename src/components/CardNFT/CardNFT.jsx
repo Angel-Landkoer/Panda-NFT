@@ -1,7 +1,7 @@
 // import styles
 import "./CardNFT.scss";
 
-// import component
+// import components
 import { Component } from "./ComponentCard/Component";
 
 export function CardNFT({ description, image }) {
