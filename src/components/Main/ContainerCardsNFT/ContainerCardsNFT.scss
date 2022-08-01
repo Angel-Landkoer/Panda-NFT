@@ -1,4 +1,7 @@
 .containerCards {
+  padding-top: 40px;
+  padding-bottom: 100px;
+
   color: aliceblue;
 
   .titleBtn_flex {
@@ -15,7 +18,7 @@
     & button {
       width: 176px;
       height: 56px;
-      border: 1px #1E50FF solid;
+      border: 1px #1e50ff solid;
 
       font-size: 16px;
 
@@ -25,11 +28,11 @@
     }
 
     & button:hover {
-        border: 2px #1E50FF solid;
+      border: 2px #1e50ff solid;
     }
 
     & button:active {
-        border: 3px #1E50FF solid;
+      border: 3px #1e50ff solid;
     }
   }
 

@@ -27,7 +27,6 @@ export function SectionCreateSellNFT() {
               "Once you’ve set up your wallet of choice, connect it to OpenSea by clicking the wallet icon in the top right corner."
             }
           />
-          
         </div>
       </section>
     </>

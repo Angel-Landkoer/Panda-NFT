@@ -1,0 +1,27 @@
+.footer {
+  // display: flex;
+  // justify-content: space-around;
+  // flex-wrap: wrap;
+  // align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "logoContext resources company contact"
+    "contentP contentP contentP contentP";
+  justify-items: start;
+  align-items: flex-start;
+
+  padding: 80px 0;
+  height: 480px;
+  border: 1px black solid;
+
+  color: blanchedalmond;
+  background-color: #0f0b33;
+
+  .contentP {
+    grid-area: contentP;
+
+    padding: 0 50px;
+  }
+}

@@ -1,0 +1,106 @@
+.sectionCardDetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  padding: 20px;
+
+  .imageDetail {
+    width: 585px;
+    height: 508px;
+
+    & img {
+      width: 585px;
+      height: 508px;
+
+      border-radius: 24px;
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 575px;
+    height: 508px;
+
+    .titleCard {
+      margin: 20px 0;
+
+      font-size: 48px;
+      line-height: 63.98px;
+    }
+
+    .descriptionCard {
+      width: 574px;
+      height: 64px;
+      margin: 20px 0;
+
+      line-height: 32px;
+    }
+
+    .pricesCard {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        "spanPrice spanLast"
+        "priceBig lastBig";
+      justify-items: center;
+      align-items: center;
+      width: 575px;
+      height: auto;
+      padding: 10px;
+      margin: 10px 0;
+
+      .spanPrice_ {
+        grid-area: spanPrice;
+      }
+
+      .spanLast {
+        grid-area: spanLast;
+      }
+
+      .priceBig {
+        grid-area: priceBig;
+      }
+
+      .lastBig {
+        grid-area: lastBig;
+      }
+    }
+
+    .btnDecisions {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      padding: 20px;
+      margin: 20px 0;
+
+      & button {
+        width: 275px;
+        height: 64px;
+        padding: 16px;
+        margin: 0 5px;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 32px;
+
+        color: aliceblue;
+        border-radius: 8px;
+        background-color: #1e50ff;
+      }
+
+      & button:hover {
+        border: 1px #1e50ff solid;
+
+        background-color: rgba(30, 80, 255, 0.15);
+      }
+    }
+  }
+}

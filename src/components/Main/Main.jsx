@@ -7,17 +7,20 @@
 import "./Main.scss";
 
 // import components
-import { ContainerCardsNFT } from './ContainerCardsNFT/ContainerCardsNFT'
+import { ContainerCardsNFT } from "./ContainerCardsNFT/ContainerCardsNFT";
 import { SectionLogos } from "./SectionLogos/SectionLogos";
 import { SectionCreateSellNFT } from "./SectionCreateSellNFT/SectionCreateSellNFT";
+import { CardDetailsContainer } from "./CardDetailsContainer/CardDetailsContainer";
+// import { SectionCardDetail } from "./CardDetailsContainer/SectionCardDetail/SectionCardDetail";
 
 export function Main() {
   return (
     <main>
       <section className="main">
-        <SectionLogos />
+        {/* <SectionLogos />
         <SectionCreateSellNFT />
-        <ContainerCardsNFT title={'Live Auctions'} />
+        <ContainerCardsNFT title={"Live Auctions"} /> */}
+        <CardDetailsContainer />
       </section>
     </main>
   );
