@@ -22,6 +22,7 @@ export function CardDetailsContainer() {
       );
       const data = await response.json();
       setModelCard(data.data);
+      console.log(modelCard);
     }
 
     card();
@@ -43,13 +44,13 @@ export function CardDetailsContainer() {
             />
           );
         })}
-        {modelCard.map((item, i) => {
+        {modelCard.map((model, j) => {
           return (
             <SectionDetail
-              key={i + 3}
-              description={item.user.description}
-              TokenID={item.id}
-              ContractAddress={item.images.original.hash}
+              key={j + 3}
+              // context={model.user.description}
+              TokenID={model.id}
+              ContractAddress={model.images.original.hash}
             />
           );
         })}

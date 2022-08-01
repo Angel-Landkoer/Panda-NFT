@@ -29,20 +29,21 @@ export function Header() {
       .catch((error) => console.log("error", error));
   }, []);
 
-
   return (
     <header>
       <section className="header">
         <NavBar />
-        <Discover />
-        {
-          cardData
-          .map((item, i) => {
-            return (
-              <CardNFT key={i} description={item.title} image={item.images.original.url} />
-            )
-          })
-        }
+        
+        {/* <Discover />
+        {cardData.map((item, i) => {
+          return (
+            <CardNFT
+              key={i}
+              description={item.title}
+              image={item.images.original.url}
+            />
+          );
+        })} */}
         {/* <Discover /> */}
         {/* <CardNFT
           description={"Heat Wave No GIF by Loof and Timmy"}

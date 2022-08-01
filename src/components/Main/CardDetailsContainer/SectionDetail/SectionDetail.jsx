@@ -4,8 +4,7 @@ import { useState } from "react";
 // import styles
 import "./SectionDetail.scss";
 
-export function SectionDetail({description, TokenID, ContractAddress}) {
-
+export function SectionDetail({ context, TokenID, ContractAddress }) {
   const list1 = [
     "Contract Address",
     "Token ID",
@@ -21,7 +20,6 @@ export function SectionDetail({description, TokenID, ContractAddress}) {
   const activeBtnToggle1 = () => {
     setState1(!state1);
   };
-
   const activeBtnToggle2 = () => {
     setState2(!state2);
   };
@@ -34,21 +32,30 @@ export function SectionDetail({description, TokenID, ContractAddress}) {
     <>
       <section className="sectionDetail">
         <section className="navegationBnts">
-          <button onClick={activeBtnToggle1} className={state1 && "activebtn1"}>
+          <button
+            onClick={activeBtnToggle1}
+            className={state1 ? "activebtn1" : undefined}
+          >
             Description
           </button>
-          <button onClick={activeBtnToggle2} className={state2 && "activebtn2"}>
+          <button
+            onClick={activeBtnToggle2}
+            className={state2 ? "activebtn2" : undefined}
+          >
             Offer
           </button>
-          <button onClick={activeBtnToggle3} className={state3 && "activebtn3"}>
+          <button
+            onClick={activeBtnToggle3}
+            className={state3 ? "activebtn3" : undefined}
+          >
             Price History
           </button>
         </section>
         <p>
-          {
-            description
-          }
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ea
+          animi amet dolore ullam perferendis, laudantium nihil, tempore ad.
         </p>
+        {/* <p>{context ? context : 'Como que error'}</p> */}
         <section className="detailMore">
           <ul className="detailCategory ulStyle">
             {list1.map((item, i) => (
