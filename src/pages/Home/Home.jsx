@@ -10,6 +10,8 @@ import { DiscoverH } from "../../components/DiscoverH/DiscoverH";
 import { ContainerCardsNFT } from "../../components/ContainerCardsNFT/ContainerCardsNFT";
 import { SectionCreateSellNFT } from "../../components/SectionCreateSellNFT/SectionCreateSellNFT";
 import { SectionLogos } from "../../components/SectionLogos/SectionLogos";
+import { ContainerMultipleOptionsCardsNFT } from "../../components/ContainerMultipleOptionsCardsNFT/ContainerMultipleOptionsCardsNFT";
+import { SectionCreateYourOwnNFT } from "../../components/SectionCreateYourOwnNFT/SectionCreateYourOwnNFT";
 import { CardDetailsContainer } from "../../components/CardDetailsContainer/CardDetailsContainer";
 
 // import styles
@@ -20,7 +22,6 @@ export function Home() {
     <>
       <header>
         <section className="header">
-          {/* <NavBar /> */}
           <DiscoverH />
           <CardNFT
             description={"Heat Wave No GIF by Loof and Timmy"}
@@ -35,6 +36,10 @@ export function Home() {
           <SectionLogos />
           <SectionCreateSellNFT />
           <ContainerCardsNFT title={"Live Auctions"} />
+          <ContainerCardsNFT title={"Featured Artist"} />
+          <ContainerMultipleOptionsCardsNFT title={'Hot NFTs'} />
+          {/* <ContainerCardsNFT title={"Hot NFTs"} /> */}
+          <SectionCreateYourOwnNFT />
           {/* <CardDetailsContainer /> */}
         </section>
       </main>

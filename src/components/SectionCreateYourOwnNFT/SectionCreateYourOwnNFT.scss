@@ -1,0 +1,74 @@
+.sectionCreateYourOwnNFT {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 1200px;
+  height: 352px;
+  margin: 0 auto;
+  border: 2px solid;
+
+  border-image-source: radial-gradient(
+        108.37% 387.4% at 0.71% 2.84%,
+        #398dee 0%,
+        rgba(118, 123, 241, 0) 100%,
+        rgba(57, 141, 238, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(
+        98.16% 354.35% at 98.16% 96.62%,
+        #398dee 0%,
+        rgba(118, 123, 241, 0) 100%,
+        rgba(57, 141, 238, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+  color: aliceblue;
+  border-radius: 16px;
+  // background-color: #1e50ff;
+  background: radial-gradient(
+      151.95% 463.58% at -44.29% -62.34%,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  backdrop-filter: blur(74px);
+
+  & h3 {
+    margin: 10px 0;
+
+    font-size: 48px;
+    line-height: 63.98px;
+  }
+
+  & p {
+    width: 790px;
+    height: 64px;
+    margin: 20px 0;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  & button {
+    width: 239px;
+    height: 64px;
+    margin: 20px 0;
+    border: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: aliceblue;
+    border-radius: 16px;
+    background-color: #1e50ff;
+  }
+
+  //   & button:hover {
+  //     color: aliceblue;
+  //     background-color: #1e50ff;
+  //   }
+}

@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import styles
-import './App.css';
+import './App.scss';
 
 // import components
 // pages
@@ -19,15 +19,17 @@ import { NavBar } from './components/NavBar/NavBar';
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/Discover' element={<Discover />} />
-          <Route path='*' element={<Error />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <div className='App'>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Discover' element={<Discover />} />
+            <Route path='*' element={<Error />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </div>
     </>
   );
 }

@@ -7,7 +7,7 @@ import "./NavBar.scss";
 export function NavBar() {
   return (
     <nav className="navigation">
-      <Link to="">
+      <Link to="/">
         <img
           src={
             "https://raw.githubusercontent.com/Angel-Landkoer/The-pictures/master/reac-Pandas_NFT/logo%20(8).png"
