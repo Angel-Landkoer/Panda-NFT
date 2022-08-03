@@ -72,12 +72,12 @@ export function Discover() {
               <button>Sort By</button>
             </div>
             <div className="someCategories">
-              <button>Music</button>
-              <button>Art</button>
-              <button>Sports</button>
-              <button>Vitual</button>
-              <button>Videos</button>
-              <button>More</button>
+              <button className="btnMusic">Music</button>
+              <button className="btnArt">Art</button>
+              <button className="btnSport">Sport</button>
+              <button className="btnVirtual">Virtual</button>
+              <button className="btnVideos">Videos</button>
+              <button className="btnMore">More</button>
             </div>
           </section>
           <section className="containerCard">
@@ -85,6 +85,7 @@ export function Discover() {
               return <CardsNFT key={item.id} product={item} />;
             })}
           </section>
+          <button className="viewMore">View More</button>
         </section>
       </main>
     </>
