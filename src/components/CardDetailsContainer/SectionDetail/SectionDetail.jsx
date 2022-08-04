@@ -4,15 +4,15 @@ import { useState } from "react";
 // import styles
 import "./SectionDetail.scss";
 
-export function SectionDetail({description, TokenID, ContractAddress}) {
-
+export function SectionDetail({ data }) {
   const list1 = [
     "Contract Address",
     "Token ID",
     "Token Standard",
     "Blockchain",
   ];
-  const list2 = [ContractAddress, TokenID, "Text3", "Ethereume"];
+
+  const list2 = [data.images.original.hash, data.id, "Text3", "Ethereume"];
 
   const [state1, setState1] = useState(false);
   const [state2, setState2] = useState(false);
@@ -44,11 +44,7 @@ export function SectionDetail({description, TokenID, ContractAddress}) {
             Price History
           </button>
         </section>
-        <p>
-          {
-            description
-          }
-        </p>
+        <p>{data.user.description}</p>
         <section className="detailMore">
           <ul className="detailCategory ulStyle">
             {list1.map((item, i) => (

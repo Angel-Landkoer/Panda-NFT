@@ -1,5 +1,6 @@
 // import hooks
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // import styles
 import "./CardsNFT.scss";
@@ -62,7 +63,10 @@ export function CardsNFT({ product }) {
             -
           </button>
         </div>
-        <button>BSC</button>
+        <Link to={`/CardNFT/${product.images.original.hash}`}>
+          <button>BSC</button>
+        </Link>
+
         {loading ? (
           <h2>Loading...</h2>
         ) : (
@@ -77,6 +81,7 @@ export function CardsNFT({ product }) {
             );
           })
         )}
+
       </section>
     </>
   );

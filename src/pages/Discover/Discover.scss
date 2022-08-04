@@ -37,7 +37,7 @@
     justify-content: center;
 
     & h2 {
-      margin: 100px 0 20px ;
+      margin: 100px 0 20px;
 
       font-size: 48px;
       line-height: 63.98px;
@@ -47,7 +47,7 @@
       width: 799px;
       height: 72px;
       padding: 16px;
-      margin: 50px 0 20px ;
+      margin: 50px 0 20px;
       border: 1px solid #eef2f6;
 
       font-size: 20px;
@@ -156,6 +156,8 @@
   .containerCard {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .viewMore {

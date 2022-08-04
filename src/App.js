@@ -8,6 +8,7 @@ import './App.scss';
 // pages
 import { Home } from './pages/Home/Home';
 import { Discover } from './pages/Discover/Discover';
+import { Details } from './pages/Details/Details'
 import { Error } from './pages/Error/Error'
 
 // Footer
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Discover' element={<Discover />} />
+            <Route path='/CardNFT/:idCard' element={<Details />} />
             <Route path='*' element={<Error />} />
           </Routes>
           <Footer />

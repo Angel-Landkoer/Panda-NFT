@@ -7,7 +7,7 @@ import "./SectionCardDetail.scss";
 // import components
 import { ComponentDetailUser } from "./ComponentDetailUser/ComponentDetailUser";
 
-export function SectionCardDetail({ detail, priceFirst, priceSecond }) {
+export function SectionCardDetail({ data, priceFirst, priceSecond }) {
   const [userCreator, setUserCreator] = useState([]);
 
   useEffect(() => {
@@ -24,11 +24,11 @@ export function SectionCardDetail({ detail, priceFirst, priceSecond }) {
     <>
       <section className="sectionCardDetail">
         <figure className="imageDetail">
-          <img src={detail.images.original.url} alt="algo" />
+          <img src={data.images.original.url} alt="algo" />
         </figure>
         <section className="details">
-          <h3 className="titleCard">{detail.username}</h3>
-          <p className="descriptionCard">{detail.title}</p>
+          <h3 className="titleCard">{data.username}</h3>
+          <p className="descriptionCard">{data.title}</p>
           <div className="pricesCard">
             <span className="spanPrice">Price Bid</span>
             <p className="priceBig">{priceFirst} ETH</p>
