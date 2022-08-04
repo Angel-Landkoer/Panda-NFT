@@ -5,7 +5,7 @@ import "./ContainerMultipleOptionsCardsNFT.scss";
 import { useState, useEffect } from "react";
 
 // import components
-import { CardsNFT } from "../ContainerCardsNFT/CardsNFT/CardsNFT";
+import { CardsNFT } from "../CardsNFT/CardsNFT";
 
 export function ContainerMultipleOptionsCardsNFT({ title }) {
   const [newNFT, setNewNFT] = useState([]);
