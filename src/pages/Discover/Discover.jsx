@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 // import components
-import { CardsNFT } from "../../components/ContainerCardsNFT/CardsNFT/CardsNFT";
+import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
 
 // import styles
 import "./Discover.scss";

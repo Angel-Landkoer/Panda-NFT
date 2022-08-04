@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import "./ContainerCardsNFT.scss";
 
 // import components
-import { CardsNFT } from "./CardsNFT/CardsNFT";
+import { CardsNFT } from "../CardsNFT/CardsNFT";
 
 export function ContainerCardsNFT({ title }) {
   const [newNFT, setNewNFT] = useState([]);
