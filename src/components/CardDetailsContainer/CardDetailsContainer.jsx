@@ -42,6 +42,8 @@ export function CardDetailsContainer() {
     setItemCard(found);
   }, [idCard, modelCard]);
 
+  console.log(itemCard);
+
   return (
     <>
       <section className="cardDetailsContainer">

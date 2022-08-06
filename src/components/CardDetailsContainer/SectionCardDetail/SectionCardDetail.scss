@@ -78,10 +78,7 @@
       justify-content: flex-start;
       align-items: center;
 
-      padding: 20px;
-      margin: 20px 0;
-
-      & button {
+      .finishBuy {
         width: 275px;
         height: 64px;
         padding: 16px;
@@ -94,12 +91,22 @@
         color: aliceblue;
         border-radius: 8px;
         background-color: #1e50ff;
+
+        & a {
+          text-decoration: none;
+
+          color: aliceblue;
+        }
       }
 
-      & button:hover {
+      .finishBuy:hover {
         border: 1px #1e50ff solid;
 
         background-color: rgba(30, 80, 255, 0.15);
+      }
+
+      .btnOffer {
+        display: none;
       }
     }
   }

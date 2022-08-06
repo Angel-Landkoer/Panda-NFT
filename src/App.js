@@ -15,6 +15,7 @@ import { Error } from './pages/Error/Error'
 // footer
 import { Footer } from "./components/Footer/Footer";
 import { NavBar } from './components/NavBar/NavBar';
+import { CartAdd } from './pages/CartAdd/CartAdd';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/Discover' element={<Discover />} />
             <Route path='/CardNFT/:idCard' element={<Details />} />
+            <Route path='/CartAdd' element={<CartAdd />} />
             <Route path='*' element={<Error />} />
           </Routes>
           <Footer />

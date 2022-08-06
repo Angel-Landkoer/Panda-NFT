@@ -1,6 +1,7 @@
 // import hooks
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ItemCount } from "../ItemCount/ItemCount";
 
 // import styles
 import "./CardsNFT.scss";
@@ -11,26 +12,6 @@ import { Component } from "./ComponetsCards/Component";
 export function CardsNFT({ product }) {
   const [create, setCreate] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const [limit, setlimit] = useState(0);
-
-  const activeBtnLess = () => {
-    if (limit <= 0) {
-      setlimit(0);
-    } else {
-      setlimit(limit - 1);
-    }
-  };
-
-  const activeBtnMore = () => {
-    if (limit >= 1) {
-      setlimit(1);
-    } else if (limit === 2) {
-      setlimit(1);
-    } else {
-      setlimit(limit + 1);
-    }
-  };
 
   useEffect(() => {
     async function apiCreator() {
@@ -54,15 +35,7 @@ export function CardsNFT({ product }) {
           alt="imagen de una card"
         />
         <p className="textNFT">{product.title}</p>
-        <div className="stocks">
-          <button className="less" onClick={activeBtnMore}>
-            +
-          </button>
-          <span>{limit}</span>
-          <button className="more" onClick={activeBtnLess}>
-            -
-          </button>
-        </div>
+        {/* <ItemCount init={0} stock={1} /> */}
         <Link to={`/CardNFT/${product.images.original.hash}`}>
           <button>BSC</button>
         </Link>
@@ -81,7 +54,6 @@ export function CardsNFT({ product }) {
             );
           })
         )}
-
       </section>
     </>
   );

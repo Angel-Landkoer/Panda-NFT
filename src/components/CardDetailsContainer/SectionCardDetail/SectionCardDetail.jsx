@@ -1,14 +1,20 @@
 // import hooks
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // import styles
 import "./SectionCardDetail.scss";
 
 // import components
 import { ComponentDetailUser } from "./ComponentDetailUser/ComponentDetailUser";
+import { ItemCount } from "../../ItemCount/ItemCount";
 
 export function SectionCardDetail({ data, priceFirst, priceSecond }) {
+  // Api User
   const [userCreator, setUserCreator] = useState([]);
+
+  // cantidad selecciona
+  const [quantitySelected, setQuantitySelected] = useState(0);
 
   useEffect(() => {
     async function apiUser() {
@@ -43,8 +49,17 @@ export function SectionCardDetail({ data, priceFirst, priceSecond }) {
             />
           ))}
           <div className="btnDecisions">
-            <button>Purchase Now</button>
-            <button>Place A Bid</button>
+            {quantitySelected > 0 ? (
+              <button className="finishBuy">
+                <Link to="/CartAdd">TERMINAR COMPRA</Link>
+              </button>
+            ) : (
+              <ItemCount
+                setQuantitySelected={setQuantitySelected}
+                init={0}
+                stock={1}
+              />
+            )}
           </div>
         </section>
       </section>
