@@ -8,8 +8,8 @@ import './App.scss';
 // pages
 import { Home } from './pages/Home/Home';
 import { Discover } from './pages/Discover/Discover';
-import { Details } from './pages/Details/Details'
-import { Error } from './pages/Error/Error'
+import { Details } from './pages/Details/Details';
+import { Error } from './pages/Error/Error';
 
 // Footer
 // footer

@@ -2,7 +2,6 @@
 
 // import components
 // header
-import { NavBar } from "../../components/NavBar/NavBar";
 import { CardNFT } from "../../components/CardNFT/CardNFT";
 import { DiscoverH } from "../../components/DiscoverH/DiscoverH";
 
@@ -12,7 +11,6 @@ import { SectionCreateSellNFT } from "../../components/SectionCreateSellNFT/Sect
 import { SectionLogos } from "../../components/SectionLogos/SectionLogos";
 import { ContainerMultipleOptionsCardsNFT } from "../../components/ContainerMultipleOptionsCardsNFT/ContainerMultipleOptionsCardsNFT";
 import { SectionCreateYourOwnNFT } from "../../components/SectionCreateYourOwnNFT/SectionCreateYourOwnNFT";
-import { CardDetailsContainer } from "../../components/CardDetailsContainer/CardDetailsContainer";
 
 // import styles
 import "./Home.scss";
@@ -37,7 +35,7 @@ export function Home() {
           <SectionCreateSellNFT />
           <ContainerCardsNFT title={"Live Auctions"} />
           <ContainerCardsNFT title={"Featured Artist"} />
-          <ContainerMultipleOptionsCardsNFT title={'Hot NFTs'} />
+          <ContainerMultipleOptionsCardsNFT title={"Hot NFTs"} />
           {/* <ContainerCardsNFT title={"Hot NFTs"} /> */}
           <SectionCreateYourOwnNFT />
           {/* <CardDetailsContainer /> */}
