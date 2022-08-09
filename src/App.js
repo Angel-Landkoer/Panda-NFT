@@ -11,6 +11,9 @@ import { Discover } from './pages/Discover/Discover';
 import { Details } from './pages/Details/Details';
 import { Error } from './pages/Error/Error';
 
+// Context
+import { CartProvider } from './Context/CartContext';
+
 // Footer
 // footer
 import { Footer } from "./components/Footer/Footer";
@@ -21,7 +24,7 @@ import { CartAdd } from './pages/CartAdd/CartAdd';
 function App() {
   return (
     <>
-      <div className='App'>
+      <CartProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -33,7 +36,7 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
-      </div>
+      </CartProvider>
     </>
   );
 }

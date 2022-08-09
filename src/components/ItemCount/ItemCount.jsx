@@ -1,13 +1,16 @@
 // import hooks
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 // import styles
 import "./ItemCount.scss";
 
-export function ItemCount({ init, stock, setQuantitySelected }) {
+export function ItemCount({ init, stock, setQuantitySelected, data }) {
   const [pro, setPro] = useState(init);
 
   const [dynamic, setDynamic] = useState(false);
+
+  const { addProductToCart } = useContext(CartContext);
 
   const addProduct = (num) => {
     setPro(init + num);
@@ -15,6 +18,7 @@ export function ItemCount({ init, stock, setQuantitySelected }) {
 
   const onAdd = () => {
     setQuantitySelected(pro);
+    addProductToCart(data);
     if (pro > 0) {
       setDynamic(true);
     }

@@ -1,6 +1,9 @@
 // import Hooks
 import { Link } from "react-router-dom";
 
+// inport component
+import { CartWidget } from "./ComponentBtn/CartWidget";
+
 // import style
 import "./NavBar.scss";
 
@@ -35,7 +38,8 @@ export function NavBar() {
           <Link to="Contact-us">Contact-us</Link>
         </li>
       </ul>
-      <button className="connectWallet">Connect Wallet</button>
+      {/* <button className="connectWallet">Connect Wallet</button> */}
+      <CartWidget />
     </nav>
   );
 }

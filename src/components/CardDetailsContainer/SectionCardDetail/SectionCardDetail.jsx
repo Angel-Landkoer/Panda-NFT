@@ -58,6 +58,7 @@ export function SectionCardDetail({ data, priceFirst, priceSecond }) {
                 setQuantitySelected={setQuantitySelected}
                 init={0}
                 stock={1}
+                data={data}
               />
             )}
           </div>
