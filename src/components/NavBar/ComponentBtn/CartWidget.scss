@@ -62,10 +62,10 @@
 
     .context {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "contextImg contextTitle contextDescription";
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "contextImg contextTitle contextDescription contextPrice";
 
-      width: 300px;
+      width: auto;
       height: auto;
       margin: 0 auto;
       border: 2px aliceblue solid;
@@ -86,6 +86,10 @@
 
       .contextDescription {
         grid-area: contextDescription;
+      }
+
+      .contextPrice {
+        grid-area: contextPrice;
       }
 
       & p {

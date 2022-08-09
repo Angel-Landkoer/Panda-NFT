@@ -12,7 +12,7 @@ import { SectionDetail } from "./SectionDetail/SectionDetail";
 import { CartContext } from "../../Context/CartContext";
 
 export function CardDetailsContainer() {
-  const { setCartProducts } = useContext(CartContext);
+  const { setCartProductPrice } = useContext(CartContext);
 
   let price1;
   let price2;
@@ -52,7 +52,7 @@ export function CardDetailsContainer() {
         {itemCard.map((item, i) => {
           price1 = Math.floor(Math.random() * 100);
           price2 = Math.floor(Math.random() * 100);
-
+          setCartProductPrice(price1);
           return (
             <SectionCardDetail
               key={i}
