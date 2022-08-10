@@ -8,7 +8,8 @@ import "./CartWidget.scss";
 export function CartWidget() {
   const [toggle, setToggle] = useState(false);
 
-  const { cartProducts, cartProductPrice, clear } = useContext(CartContext);
+  const { cartProducts, cartProductPrice, totalProducts, clear } =
+    useContext(CartContext);
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -18,6 +19,8 @@ export function CartWidget() {
     <>
       <section className="cartWidget">
         <button className="cartToggle" onClick={handleToggle}>
+          {cartProducts.length !== 0 && <span>{totalProducts}</span>}
+          <i className="fa-solid fa-cart-shopping"></i>
           Cart
         </button>
         <div className={toggle ? "contentActive" : "contentHide"}>
@@ -30,9 +33,14 @@ export function CartWidget() {
                   alt=""
                 />
                 <p className="contextTitle">Title: {item.title}</p>
-                <p className="contextDescription">
-                  Description: {item.user.description}
-                </p>
+                {item.user ? (
+                  <p className="contextDescription">
+                    Description: {item.user.description}
+                  </p>
+                ) : (
+                  <p>Description: Dato no encontrado</p>
+                )}
+
                 <p className="contextPrice">Price Big: {cartProductPrice}</p>
               </div>
             );

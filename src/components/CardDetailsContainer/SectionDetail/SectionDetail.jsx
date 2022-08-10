@@ -44,7 +44,11 @@ export function SectionDetail({ data }) {
             Price History
           </button>
         </section>
-        <p>{data.user.description}</p>
+        {data.user ? (
+          <p>{data.user.description}</p>
+        ) : (
+          <p>Datos de description no encontrados</p>
+        )}
         <section className="detailMore">
           <ul className="detailCategory ulStyle">
             {list1.map((item, i) => (

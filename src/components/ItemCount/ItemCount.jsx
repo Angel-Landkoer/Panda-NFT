@@ -46,13 +46,13 @@ export function ItemCount({ init, stock, setQuantitySelected, data }) {
         </section>
         <section className="toPay">
           <button
-            className={dynamic ? "btnOffer" : console.log("Algo fallo", null)}
+            className={dynamic ? "btnOffer" : ''}
             onClick={onAdd}
           >
             Purchase Now
           </button>
           <button
-            className={dynamic ? "btnOffer" : console.log("Algo fallo", null)}
+            className={dynamic ? "btnOffer" : ''}
           >
             Place A Big
           </button>

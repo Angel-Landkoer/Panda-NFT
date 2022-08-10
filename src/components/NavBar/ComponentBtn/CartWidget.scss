@@ -6,6 +6,8 @@
   justify-content: center;
 
   .cartToggle {
+    position: relative;
+
     width: 170px;
     height: 50px;
 
@@ -16,6 +18,21 @@
     color: aliceblue;
     border-radius: 8px;
     background-color: #1e50ff;
+
+    & span {
+      position: absolute;
+      inset: -16px 0px 0px -7px;
+
+      width: 28px;
+      height: 28px;
+
+      border-radius: 50%;
+      background-color: #2d3a83;
+    }
+
+    & i {
+      margin-right: 10px;
+    }
   }
 
   .cartToggle:active {

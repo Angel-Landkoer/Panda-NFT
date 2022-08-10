@@ -8,12 +8,20 @@ export function CartProvider({ children }) {
 
   const [cartProductPrice, setCartProductPrice] = useState(0);
 
+  const [totalProducts, setTotalProducts] = useState(0);
+
   const addProductToCart = (product) => {
-    setCartProducts([...cartProducts, product]);
+    let isInCart = cartProducts.find((itemCart) => itemCart.id === product.id);
+    if (!isInCart) {
+      setTotalProducts(totalProducts + 1);
+
+      return setCartProducts([...cartProducts, product]);
+    }
   };
 
   const clear = () => {
     setCartProducts([]);
+    setTotalProducts(0);
   };
 
   const data = {
@@ -23,6 +31,8 @@ export function CartProvider({ children }) {
     clear,
     setCartProductPrice,
     cartProductPrice,
+    setTotalProducts,
+    totalProducts,
   };
 
   return (
