@@ -1,4 +1,4 @@
-.header {
+.headerHome {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 900px;
@@ -13,12 +13,12 @@
   font-family: "Poppins", sans-serif;
 
   color: aliceblue;
-  background-color: none;
+  background-color: #02050e;
 }
 
-.main {
+.mainHome {
   font-family: "Poppins", sans-serif;
 
-  //   background-color: #02050e;
-  background-color: none;
+  color: aliceblue;
+  background-color: #02050e;
 }

@@ -51,11 +51,11 @@ export function Discover() {
   //
   return (
     <>
-      {/* <header>
-        <section className="header"></section>
-      </header> */}
+      <header>
+        <section className="headerDiscover"></section>
+      </header>
       <main>
-        <section className="main">
+        <section className="mainDiscover">
           <section className="searchKey">
             <h2>Explore Collectibles</h2>
             <form onSubmit={(e) => e.preventDefault()}>

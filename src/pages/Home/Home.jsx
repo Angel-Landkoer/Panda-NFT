@@ -19,7 +19,7 @@ export function Home() {
   return (
     <>
       <header>
-        <section className="header">
+        <section className="headerHome">
           <DiscoverH />
           <CardNFT
             description={"Heat Wave No GIF by Loof and Timmy"}
@@ -30,7 +30,7 @@ export function Home() {
         </section>
       </header>
       <main>
-        <section className="main">
+        <section className="mainHome">
           <SectionLogos />
           <SectionCreateSellNFT />
           <ContainerCardsNFT title={"Live Auctions"} />

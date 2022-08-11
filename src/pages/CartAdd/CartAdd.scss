@@ -1,7 +1,23 @@
-.header {
-    display: flex;
-    justify-content: center;
+.headerCartAdd {
+  display: flex;
+  justify-content: center;
 
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+
+  color: aliceblue;
+  background-color: #02050e;
+}
+
+.mainCartAdd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+
+  width: 100%;
+  height: auto;
+
+  color: aliceblue;
+  background-color: #02050e;
 }

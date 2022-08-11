@@ -8,7 +8,7 @@ export function Details() {
   return (
     <>
       <main>
-        <section className="main">
+        <section className="mainDatails">
           <CardDetailsContainer />
         </section>
       </main>
