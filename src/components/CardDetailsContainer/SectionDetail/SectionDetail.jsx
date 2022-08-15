@@ -34,13 +34,22 @@ export function SectionDetail({ data }) {
     <>
       <section className="sectionDetail">
         <section className="navegationBnts">
-          <button onClick={activeBtnToggle1} className={state1 && "activebtn1"}>
+          <button
+            onClick={activeBtnToggle1}
+            className={state1 ? "activebtn1" : ""}
+          >
             Description
           </button>
-          <button onClick={activeBtnToggle2} className={state2 && "activebtn2"}>
+          <button
+            onClick={activeBtnToggle2}
+            className={state2 ? "activebtn2" : ""}
+          >
             Offer
           </button>
-          <button onClick={activeBtnToggle3} className={state3 && "activebtn3"}>
+          <button
+            onClick={activeBtnToggle3}
+            className={state3 ? "activebtn3" : ""}
+          >
             Price History
           </button>
         </section>

@@ -22,15 +22,16 @@ export function CartAdd() {
         <section className="mainCartAdd">
           {cartProducts.map((item) => {
             return (
-              <>
-                <CardsNFT key={item.id} product={item} />
+              <div key={item.id}>
+                <CardsNFT product={item} />
                 <button
                   onClick={() => removeCard(item.id)}
                   className="btnRemove"
                 >
                   Pa' tu casa
+                  <i className="fa-solid fa-trash-can"></i>
                 </button>
-              </>
+              </div>
             );
           })}
         </section>

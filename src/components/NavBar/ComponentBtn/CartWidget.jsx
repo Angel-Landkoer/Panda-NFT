@@ -8,18 +8,19 @@ import "./CartWidget.scss";
 export function CartWidget() {
   const [toggle, setToggle] = useState(false);
 
-  const { cartProducts, cartProductPrice, totalProducts, clear } =
-    useContext(CartContext);
+  const { cartProducts, cartProductPrice, clear } = useContext(CartContext);
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
+  console.log("cartProducts", cartProducts);
+
   return (
     <>
       <section className="cartWidget">
         <button className="cartToggle" onClick={handleToggle}>
-          {cartProducts.length !== 0 && <span>{totalProducts}</span>}
+          {cartProducts.length !== 0 && <span>{cartProducts.length}</span>}
           <i className="fa-solid fa-cart-shopping"></i>
           Cart
         </button>
@@ -27,10 +28,13 @@ export function CartWidget() {
           {cartProducts.map((item, i) => {
             return (
               <div key={`context${i}`} className="context">
+                {item.count > 1 ? (
+                  <span className="spanCount">{item.count}</span>
+                ) : null}
                 <img
                   className="contextImg"
                   src={item.images.original.url}
-                  alt=""
+                  alt="Algo"
                 />
                 <p className="contextTitle">Title: {item.title}</p>
                 {item.user ? (

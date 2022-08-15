@@ -1,7 +1,9 @@
 // import hooks
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ItemCount } from "../ItemCount/ItemCount";
+
+// import components
+// import { ItemCount } from "../ItemCount/ItemCount";
 
 // import styles
 import "./CardsNFT.scss";
@@ -17,9 +19,9 @@ export function CardsNFT({ product }) {
     async function apiCreator() {
       const response = await fetch("https://randomuser.me/api/");
 
-      const data = await response.json();
+      const { results } = await response.json();
 
-      setCreate(data.results);
+      setCreate(results);
       setLoading(false);
     }
 
@@ -29,14 +31,14 @@ export function CardsNFT({ product }) {
   return (
     <>
       <section className="cardsNFTs">
+        {product.count > 1 ? <span className="spanCount">{product.count}</span> : null}
         <img
           className="pictureNFT"
           src={product.images.original.url}
           alt="imagen de una card"
         />
         <p className="textNFT">{product.title}</p>
-        {/* <ItemCount init={0} stock={1} /> */}
-        <Link to={`/CardNFT/${product.images.original.hash}`}>
+        <Link to={`/CardNFT/${product.id}`}>
           <button>BSC</button>
         </Link>
 
@@ -44,7 +46,7 @@ export function CardsNFT({ product }) {
           <h2>Loading...</h2>
         ) : (
           create.map((item) => {
-            let number = Math.floor(Math.random() * 400);
+            let number = Math.floor(Math.random() * 100);
             return (
               <Component
                 key={item.login.password}

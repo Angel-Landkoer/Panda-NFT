@@ -14,56 +14,46 @@ import { CartContext } from "../../Context/CartContext";
 export function CardDetailsContainer() {
   const { setCartProductPrice } = useContext(CartContext);
 
-  let price1;
-  let price2;
+  let price1 = Math.floor(Math.random() * 100);
+  let price2 = Math.floor(Math.random() * 100);
 
-  // API
-  const [modelCard, setModelCard] = useState([]);
+  const { idCard } = useParams();
 
   // filter
-  const [itemCard, setItemCard] = useState([]);
+  const [itemCard, setItemCard] = useState(null);
 
   useEffect(() => {
     async function card() {
       const response = await fetch(
-        "https://api.giphy.com/v1/gifs/trending?api_key=dS6ZnDy8xSpY1Ul63p88KSDnASS9X5Hb&limit=100&rating=g"
+        `https://api.giphy.com/v1/gifs/${idCard}?api_key=dS6ZnDy8xSpY1Ul63p88KSDnASS9X5Hb`
       );
-      const data = await response.json();
-      setModelCard(data.data);
+      const { data } = await response.json();
+
+      setItemCard(data);
     }
 
     card();
-  }, []);
-
-  const { idCard } = useParams();
-
-  useEffect(() => {
-    const found = modelCard.filter(
-      (card) => card.images.original.hash === idCard
-    );
-    setItemCard(found);
-  }, [idCard, modelCard]);
+    setCartProductPrice(price1);
+  }, [idCard]);
 
   return (
     <>
       <section className="cardDetailsContainer">
-        {itemCard.map((item, i) => {
-          price1 = Math.floor(Math.random() * 100);
-          price2 = Math.floor(Math.random() * 100);
-          setCartProductPrice(price1);
-          return (
-            <SectionCardDetail
-              key={i}
-              data={item}
-              priceFirst={price1}
-              priceSecond={price2}
-            />
-          );
-        })}
+        {itemCard ? (
+          <SectionCardDetail
+            data={itemCard}
+            priceFirst={price1}
+            priceSecond={price2}
+          />
+        ) : (
+          <h4>Cargando detalles...</h4>
+        )}
+        {itemCard ? (
+          <SectionDetail data={itemCard} />
+        ) : (
+          <h4>Cargando otros detalles...</h4>
+        )}
 
-        {itemCard.map((item, i) => {
-          return <SectionDetail key={i + 3} data={item} />;
-        })}
         <ContainerCardsNFT title={"Another NFTs"} />
       </section>
     </>

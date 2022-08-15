@@ -6,20 +6,20 @@ import { CartContext } from "../../Context/CartContext";
 import "./ItemCount.scss";
 
 export function ItemCount({ init, stock, setQuantitySelected, data }) {
-  const [pro, setPro] = useState(init);
+  const [count, setCount] = useState(init);
 
   const [dynamic, setDynamic] = useState(false);
 
-  const { addProductToCart } = useContext(CartContext);
+  const { addProductToCart, someThing } = useContext(CartContext);
 
   const addProduct = (num) => {
-    setPro(init + num);
+    setCount(count + num);
   };
 
   const onAdd = () => {
-    setQuantitySelected(pro);
-    addProductToCart(data);
-    if (pro > 0) {
+    setQuantitySelected(count);
+    someThing(data, count);
+    if (count > 0) {
       setDynamic(true);
     }
   };
@@ -30,32 +30,30 @@ export function ItemCount({ init, stock, setQuantitySelected, data }) {
         <section className="btnsCounter">
           <button
             className="less"
-            onClick={() => addProduct(0)}
-            disabled={pro === init}
+            onClick={() => {
+              addProduct(-1);
+            }}
+            disabled={count === init ? true : false}
           >
             -
           </button>
-          <span>{pro}</span>
+          <span>{count}</span>
           <button
             className="more"
-            onClick={() => addProduct(+1)}
-            disabled={pro === stock}
+            onClick={() => {
+              addProduct(+1);
+            }}
+            disabled={count === stock ? true : false}
           >
             +
           </button>
+          <span style={{ color: "red" }}>{`Solo hay ${stock} en stock`}</span>
         </section>
         <section className="toPay">
-          <button
-            className={dynamic ? "btnOffer" : ''}
-            onClick={onAdd}
-          >
+          <button className={dynamic ? "btnOffer" : ""} onClick={onAdd}>
             Purchase Now
           </button>
-          <button
-            className={dynamic ? "btnOffer" : ''}
-          >
-            Place A Big
-          </button>
+          <button className={dynamic ? "btnOffer" : ""}>Place A Big</button>
         </section>
       </section>
     </>

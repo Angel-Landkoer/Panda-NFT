@@ -7,17 +7,17 @@ import "./ContainerCardsNFT.scss";
 // import components
 import { CardsNFT } from "../CardsNFT/CardsNFT";
 
-export function ContainerCardsNFT({ title }) {
+export function ContainerCardsNFT({ title, number }) {
   const [newNFT, setNewNFT] = useState([]);
 
   useEffect(() => {
     async function apiNFTs() {
       const response = await fetch(
-        "https://api.giphy.com/v1/gifs/trending?api_key=dS6ZnDy8xSpY1Ul63p88KSDnASS9X5Hb&limit=3&rating=g"
+        `https://api.giphy.com/v1/gifs/trending?api_key=dS6ZnDy8xSpY1Ul63p88KSDnASS9X5Hb&limit=3&offset=${number}&rating=g`
       );
-      const data = await response.json();
+      const { data } = await response.json();
 
-      setNewNFT(data.data);
+      setNewNFT(data);
     }
 
     apiNFTs();

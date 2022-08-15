@@ -33,9 +33,9 @@ export function Home() {
         <section className="mainHome">
           <SectionLogos />
           <SectionCreateSellNFT />
-          <ContainerCardsNFT title={"Live Auctions"} />
-          <ContainerCardsNFT title={"Featured Artist"} />
-          <ContainerMultipleOptionsCardsNFT title={"Hot NFTs"} />
+          <ContainerCardsNFT number={6} title={"Live Auctions"} />
+          <ContainerCardsNFT number={1} title={"Featured Artist"} />
+          <ContainerMultipleOptionsCardsNFT number={10} title={"Hot NFTs"} />
           {/* <ContainerCardsNFT title={"Hot NFTs"} /> */}
           <SectionCreateYourOwnNFT />
           {/* <CardDetailsContainer /> */}

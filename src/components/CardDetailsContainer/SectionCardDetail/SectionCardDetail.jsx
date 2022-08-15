@@ -19,8 +19,11 @@ export function SectionCardDetail({ data, priceFirst, priceSecond }) {
   useEffect(() => {
     async function apiUser() {
       const response = await fetch("https://randomuser.me/api/");
-      const data = await response.json();
-      setUserCreator(data.results);
+      const { results } = await response.json();
+      const dataUser = results.find(
+        (user) => user.gender === "male" || user.gender === "female"
+      );
+      setUserCreator(dataUser);
     }
 
     apiUser();
@@ -41,18 +44,30 @@ export function SectionCardDetail({ data, priceFirst, priceSecond }) {
             <span className="spanLast">Last Big</span>
             <p className="lastBig">{priceSecond} ETH</p>
           </div>
-          {userCreator.map((item) => (
-            <ComponentDetailUser
-              key={item.login.password}
-              creator={item.name.first}
-              imagen={item.picture.medium}
-            />
-          ))}
+          {userCreator ? (
+            <ComponentDetailUser user={userCreator} />
+          ) : (
+            <span>Cargando usuarios...</span>
+          )}
+
           <div className="btnDecisions">
             {quantitySelected > 0 ? (
-              <button className="finishBuy">
-                <Link to="/CartAdd">TERMINAR COMPRA</Link>
-              </button>
+              <Link to="/CartAdd">
+                <button className="finishBuy">TERMINAR COMPRA</button>
+              </Link>
+            ) : (
+              <ItemCount
+                setQuantitySelected={setQuantitySelected}
+                init={1}
+                stock={15}
+                data={data}
+              />
+            )}
+
+            {/* {quantitySelected > 0 ? (
+              <Link to="/CartAdd">
+                <button className="finishBuy">TERMINAR COMPRA</button>
+              </Link>
             ) : (
               <ItemCount
                 setQuantitySelected={setQuantitySelected}
@@ -60,7 +75,7 @@ export function SectionCardDetail({ data, priceFirst, priceSecond }) {
                 stock={1}
                 data={data}
               />
-            )}
+            )} */}
           </div>
         </section>
       </section>
