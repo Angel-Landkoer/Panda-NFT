@@ -14,7 +14,6 @@ export function CartWidget() {
     setToggle(!toggle);
   };
 
-  console.log("cartProducts", cartProducts);
 
   return (
     <>

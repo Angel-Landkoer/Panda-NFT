@@ -1,40 +1,17 @@
 // import styles
 import "./SectionLogos.scss";
 
-export function SectionLogos() {
+export function SectionLogos({ logos }) {
   return (
     <>
       <section className="logos">
-        <figure>
-          <img
-            src="https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item.png?raw=true"
-            alt=""
-          />
-        </figure>
-        <figure>
-          <img
-            src="https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(1).png?raw=true"
-            alt=""
-          />
-        </figure>
-        <figure>
-          <img
-            src="https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(2).png?raw=true"
-            alt=""
-          />
-        </figure>
-        <figure>
-          <img
-            src="https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(3).png?raw=true"
-            alt=""
-          />
-        </figure>
-        <figure>
-          <img
-            src="https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Tokocrypto%201.png?raw=true"
-            alt=""
-          />
-        </figure>
+        {logos.map((logo, i) => {
+          return (
+            <figure>
+              <img src={logo} alt={`logo${i}`} />
+            </figure>
+          );
+        })}
       </section>
     </>
   );

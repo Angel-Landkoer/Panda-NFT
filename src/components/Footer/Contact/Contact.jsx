@@ -1,7 +1,7 @@
 // import styles
 import "./Contact.scss";
 
-export function Contact() {
+export function Contact({ contactLogos }) {
   return (
     <>
       <section className="contact">
@@ -10,9 +10,9 @@ export function Contact() {
           <p>2715 Ash Dr. San Jose, South Dakota 83475</p>
         </div>
         <div className="icons">
-          <i className="fa-brands fa-facebook logoFacebook"></i>
-          <i className="fa-brands fa-twitter logoTwitter"></i>
-          <i className="fa-brands fa-square-instagram logoInstagram"></i>
+          {contactLogos.map((logo, i) => {
+            return <i key={`contactLogo${i}`} className={logo}></i>;
+          })}
         </div>
       </section>
     </>
