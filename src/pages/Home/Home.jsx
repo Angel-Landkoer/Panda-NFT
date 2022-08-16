@@ -16,6 +16,14 @@ import { SectionCreateYourOwnNFT } from "../../components/SectionCreateYourOwnNF
 import "./Home.scss";
 
 export function Home() {
+  const logos = [
+    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item.png?raw=true",
+    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(1).png?raw=true",
+    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(2).png?raw=true",
+    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(3).png?raw=true",
+    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Tokocrypto%201.png?raw=true",
+  ];
+
   return (
     <>
       <header>
@@ -31,7 +39,8 @@ export function Home() {
       </header>
       <main>
         <section className="mainHome">
-          <SectionLogos />
+          <SectionLogos logos={logos} />
+
           <SectionCreateSellNFT />
           <ContainerCardsNFT number={6} title={"Live Auctions"} />
           <ContainerCardsNFT number={1} title={"Featured Artist"} />

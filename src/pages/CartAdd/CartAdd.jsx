@@ -28,7 +28,7 @@ export function CartAdd() {
                   onClick={() => removeCard(item.id)}
                   className="btnRemove"
                 >
-                  Pa' tu casa
+                  Eliminar
                   <i className="fa-solid fa-trash-can"></i>
                 </button>
               </div>
