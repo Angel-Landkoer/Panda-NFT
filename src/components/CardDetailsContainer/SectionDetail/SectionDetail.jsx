@@ -5,14 +5,14 @@ import { useState } from "react";
 import "./SectionDetail.scss";
 
 export function SectionDetail({ data }) {
-  const list1 = [
+  const dataType = [
     "Contract Address",
     "Token ID",
     "Token Standard",
     "Blockchain",
   ];
 
-  const list2 = [data.images.original.hash, data.id, "Text3", "Ethereume"];
+  const datas = [data.images.original.hash, data.id, "Text3", "Ethereume"];
 
   const [state1, setState1] = useState(false);
   const [state2, setState2] = useState(false);
@@ -60,12 +60,13 @@ export function SectionDetail({ data }) {
         )}
         <section className="detailMore">
           <ul className="detailCategory ulStyle">
-            {list1.map((item, i) => (
+            {dataType.map((item, i) => (
               <li key={i + 20}>{item}</li>
             ))}
           </ul>
+
           <ul className="detailDatas ulStyle">
-            {list2.map((item, i) => (
+            {datas.map((item, i) => (
               <li key={i + 30}>{item}</li>
             ))}
           </ul>

@@ -7,7 +7,7 @@ export function SectionLogos({ logos }) {
       <section className="logos">
         {logos.map((logo, i) => {
           return (
-            <figure>
+            <figure key={`logo${i}`}>
               <img src={logo} alt={`logo${i}`} />
             </figure>
           );

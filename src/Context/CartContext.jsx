@@ -1,5 +1,5 @@
 // import hooks
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 const CartContext = createContext();
 
@@ -7,38 +7,35 @@ export function CartProvider({ children }) {
   // Card in Cart -category
   const [cartProducts, setCartProducts] = useState([]);
 
-  // // Card in count
-  // const [cardCount, setCardCount] = useState([]);
-
   // CardPrice in Card
   const [cartProductPrice, setCartProductPrice] = useState(0);
 
   // cards.length in cart
   const [totalProducts, setTotalProducts] = useState(0);
 
-  //
+  // card removed
   const [removeCardID, setRemoveCardID] = useState([]);
 
-  // const someThing = (card, count) => {
-  //   console.log("someThingCount", count);
+  // card existences or not
+  const [booleanToggle, setBooleanToggle] = useState(false);
 
-  //   if (cartProducts.some((product) => product.id === card.id)) {
-  //     const newCard = cartProducts.map((item) => ({
-  //       ...item,
-  //       counter: count,
-  //     }));
-  //     return setCartProducts(...newCard, newCard);
-  //   } else {
-  //     setCartProducts([...cartProducts, card]);
-  //   }
-  // };
+  useEffect(() => {
+    const existences = () => {
+      const booleanExistence = cartProducts.some((card) => card);
+      if (booleanExistence) {
+        setBooleanToggle(true);
+      } else {
+        setBooleanToggle(false);
+      }
+    };
+    existences();
+  });
 
   const someThing = (card, count) => {
     const newCard = { ...card, count };
 
     const existence = cartProducts.some((product) => product.id === newCard.id);
     if (existence) {
-      console.log("es true");
       const newCart = cartProducts.map((product) => {
         if (product.id === newCard.id) {
           product.count = product.count + newCard.count;
@@ -63,16 +60,14 @@ export function CartProvider({ children }) {
   };
 
   const data = {
-    // setCartProducts,
+    booleanToggle,
     cartProducts,
-    // addProductToCart,
     clear,
     setCartProductPrice,
     cartProductPrice,
     setTotalProducts,
     totalProducts,
     setRemoveCardID,
-    removeCard,
     removeCard,
     someThing,
   };

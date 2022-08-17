@@ -21,6 +21,26 @@
   color: aliceblue;
   background-color: #02050e;
 
+  .noCards {
+    width: 100%;
+    height: 80vh;
+
+    & button {
+      width: 180px;
+      height: 50px;
+
+      color: aliceblue;
+      border-radius: 5px;
+      background-color: #1e50ff;
+    }
+
+    & button:hover {
+      border: 1px #1e50ff solid;
+
+      background-color: rgba(30, 80, 255, 0.15);
+    }
+  }
+
   & div {
     display: flex;
     flex-direction: column;
@@ -46,7 +66,7 @@
 
     .btnRemove:active {
       border: 1px #1e50ff solid;
-      
+
       background-color: rgba(30, 80, 255, 0.15);
 
       & i {
