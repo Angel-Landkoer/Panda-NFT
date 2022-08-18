@@ -53,20 +53,6 @@ export function CartAdd() {
               </Link>
             </div>
           )}
-          {cartProducts.map((item) => {
-            return (
-              <div key={item.id}>
-                <CardsNFT product={item} />
-                <button
-                  onClick={() => removeCard(item.id)}
-                  className="btnRemove"
-                >
-                  Eliminar
-                  <i className="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            );
-          })}
         </section>
       </main>
     </>

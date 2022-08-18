@@ -31,7 +31,6 @@ export function Discover() {
   const handleChange = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
-    console.log(search);
   };
 
   //

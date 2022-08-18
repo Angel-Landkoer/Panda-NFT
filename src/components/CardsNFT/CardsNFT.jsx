@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // import components
-// import { ItemCount } from "../ItemCount/ItemCount";
 
 // import styles
 import "./CardsNFT.scss";

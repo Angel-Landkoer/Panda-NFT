@@ -20,6 +20,8 @@ export function CartProvider({ children }) {
   const [booleanToggle, setBooleanToggle] = useState(false);
 
   useEffect(() => {
+    // show existence of object / or / no
+
     const existences = () => {
       const booleanExistence = cartProducts.some((card) => card);
       if (booleanExistence) {
@@ -31,13 +33,17 @@ export function CartProvider({ children }) {
     existences();
   });
 
+  // function add to cart and save the counter in object
+
   const someThing = (card, count) => {
     const newCard = { ...card, count };
 
     const existence = cartProducts.some((product) => product.id === newCard.id);
     if (existence) {
       const newCart = cartProducts.map((product) => {
-        if (product.id === newCard.id) {
+        const response = product.id === newCard.id;
+
+        if (response) {
           product.count = product.count + newCard.count;
         }
         return product;
@@ -48,9 +54,13 @@ export function CartProvider({ children }) {
     }
   };
 
+  // function clean everything
+
   const clear = () => {
     setCartProducts([]);
   };
+
+  // function remove card
 
   const removeCard = (id) => {
     const foundoRemoveCard = cartProducts.findIndex((card) => card.id === id);
@@ -58,6 +68,8 @@ export function CartProvider({ children }) {
     setRemoveCardID(cartProducts.splice(foundoRemoveCard, 1));
     setTotalProducts(removeCardID);
   };
+
+  // export data
 
   const data = {
     booleanToggle,

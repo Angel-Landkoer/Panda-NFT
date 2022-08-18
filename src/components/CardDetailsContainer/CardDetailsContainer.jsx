@@ -1,5 +1,5 @@
 // import hooks
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 // import styles
@@ -9,10 +9,9 @@ import "./CardDetailsContainer.scss";
 import { ContainerCardsNFT } from "../ContainerCardsNFT/ContainerCardsNFT";
 import { SectionCardDetail } from "./SectionCardDetail/SectionCardDetail";
 import { SectionDetail } from "./SectionDetail/SectionDetail";
-import { CartContext } from "../../Context/CartContext";
+// import { CartContext } from "../../Context/CartContext";
 
 export function CardDetailsContainer() {
-  const { setCartProductPrice } = useContext(CartContext);
 
   let price1 = Math.floor(Math.random() * 100);
   let price2 = Math.floor(Math.random() * 100);
@@ -33,7 +32,6 @@ export function CardDetailsContainer() {
     }
 
     card();
-    setCartProductPrice(price1);
   }, [idCard]);
 
   return (

@@ -21,7 +21,7 @@ export function SectionCardDetail({ data, priceFirst, priceSecond }) {
       const response = await fetch("https://randomuser.me/api/");
       const { results } = await response.json();
       const dataUser = results.find(
-        (user) => user.gender === "male" || user.gender === "female"
+        (user) => user?.gender === "male" || user?.gender === "female"
       );
       setUserCreator(dataUser);
     }
