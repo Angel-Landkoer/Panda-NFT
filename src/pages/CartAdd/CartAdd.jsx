@@ -38,16 +38,7 @@ export function CartAdd() {
             })
           ) : (
             <div className="noCards">
-              <span
-                style={{
-                  color: "white",
-                  padding: "10px",
-                  margin: "10px",
-                  display: "block",
-                }}
-              >
-                No hay producto en el carrito
-              </span>
+              <span>No hay producto en el carrito</span>
               <Link to="/">
                 <button>Volver al home</button>
               </Link>

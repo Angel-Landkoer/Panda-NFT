@@ -19,9 +19,9 @@ export function Discover() {
       const response = await fetch(
         "https://api.giphy.com/v1/gifs/trending?api_key=dS6ZnDy8xSpY1Ul63p88KSDnASS9X5Hb&limit=100&rating=g"
       );
-      const data = await response.json();
+      const { data } = await response.json();
 
-      setDataCard(data.data);
+      setDataCard(data);
     }
 
     apiCard();

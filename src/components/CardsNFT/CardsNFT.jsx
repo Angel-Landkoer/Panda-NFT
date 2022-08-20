@@ -30,7 +30,9 @@ export function CardsNFT({ product }) {
   return (
     <>
       <section className="cardsNFTs">
-        {product.count > 1 ? <span className="spanCount">{product.count}</span> : null}
+        {product.count > 1 ? (
+          <span className="spanCount">{product.count}</span>
+        ) : null}
         <img
           className="pictureNFT"
           src={product.images.original.url}
