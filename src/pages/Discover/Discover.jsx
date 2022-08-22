@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 // import Hooks
 import { useState, useEffect } from "react";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 
 // import components
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
@@ -16,15 +18,18 @@ export function Discover() {
 
   useEffect(() => {
     async function apiCard() {
-      const response = await fetch(
-        "https://api.giphy.com/v1/gifs/trending?api_key=dS6ZnDy8xSpY1Ul63p88KSDnASS9X5Hb&limit=100&rating=g"
-      );
-      const { data } = await response.json();
+      const cardCollection = collection(db, "data");
+      const cardSnapshot = await getDocs(cardCollection);
+      let cardsList = cardSnapshot.docs.map((doc) => {
+        let cards = doc.data();
+        cards.id = doc.id;
 
-      setDataCard(data);
+        return cards;
+      });
+      return cardsList;
     }
 
-    apiCard();
+    apiCard().then((res) => setDataCard(res));
   }, []);
   //
 

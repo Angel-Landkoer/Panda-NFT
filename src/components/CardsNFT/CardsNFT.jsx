@@ -1,6 +1,8 @@
 // import hooks
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 
 // import components
 
@@ -16,15 +18,21 @@ export function CardsNFT({ product }) {
 
   useEffect(() => {
     async function apiCreator() {
-      const response = await fetch("https://randomuser.me/api/");
+      const userCollection = collection(db, "results");
+      const userSnapshot = await getDocs(userCollection);
+      const userList = userSnapshot.docs.map((doc) => {
+        let users = doc.data();
+        users.id = doc.id;
 
-      const { results } = await response.json();
-
-      setCreate(results);
-      setLoading(false);
+        return users;
+      });
+      return userList;
     }
 
-    apiCreator();
+    apiCreator().then((res) => {
+      setCreate(res);
+      setLoading(false);
+    });
   }, []);
 
   return (
@@ -43,11 +51,12 @@ export function CardsNFT({ product }) {
           <button>BSC</button>
         </Link>
 
-        {loading ? (
+        {/* {loading ? (
           <h2>Loading...</h2>
         ) : (
           create.map((item) => {
             let number = Math.floor(Math.random() * 100);
+            console.log("item: ", item);
             return (
               <Component
                 key={item.login.password}
@@ -56,7 +65,7 @@ export function CardsNFT({ product }) {
               />
             );
           })
-        )}
+        )} */}
       </section>
     </>
   );

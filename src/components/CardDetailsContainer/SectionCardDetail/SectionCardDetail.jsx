@@ -14,20 +14,7 @@ export function SectionCardDetail({ data, priceFirst, priceSecond }) {
   const [userCreator, setUserCreator] = useState([]);
 
   // cantidad selecciona
-  const [quantitySelected, setQuantitySelected] = useState(0);
-
-  useEffect(() => {
-    async function apiUser() {
-      const response = await fetch("https://randomuser.me/api/");
-      const { results } = await response.json();
-      const dataUser = results.find(
-        (user) => user?.gender === "male" || user?.gender === "female"
-      );
-      setUserCreator(dataUser);
-    }
-
-    apiUser();
-  }, []);
+  const [quantitySelected, setQuantitySelected] = useState(0); 
 
   return (
     <>
@@ -63,19 +50,6 @@ export function SectionCardDetail({ data, priceFirst, priceSecond }) {
                 data={data}
               />
             )}
-
-            {/* {quantitySelected > 0 ? (
-              <Link to="/CartAdd">
-                <button className="finishBuy">TERMINAR COMPRA</button>
-              </Link>
-            ) : (
-              <ItemCount
-                setQuantitySelected={setQuantitySelected}
-                init={0}
-                stock={1}
-                data={data}
-              />
-            )} */}
           </div>
         </section>
       </section>
