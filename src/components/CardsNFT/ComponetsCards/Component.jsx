@@ -5,11 +5,11 @@ export function Component({ creator, price }) {
   return (
     <>
       <section className="creatorNFT">
-        <img src={creator.picture.medium} alt="informacion de la card" />
+        <img src={creator.pictureU} alt="informacion de la card" />
         <div className="containerCreator">
           <span>Creator</span>
           <span>
-            <b>{creator.login.username}</b>
+            <b>{creator.nameU}</b>
           </span>
         </div>
         <div className="containerPrice">

@@ -8,7 +8,7 @@ import "./CartWidget.scss";
 export function CartWidget() {
   const [toggle, setToggle] = useState(false);
 
-  const { cartProducts, cartProductPrice, clear } = useContext(CartContext);
+  const { cartProducts, clear } = useContext(CartContext);
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -32,19 +32,19 @@ export function CartWidget() {
                 ) : null}
                 <img
                   className="contextImg"
-                  src={item.images.original.url}
+                  src={item.imgC}
                   alt="Algo"
                 />
-                <p className="contextTitle">Title: {item.title}</p>
+                <p className="contextTitle">Title: {item.titleC}</p>
                 {item.user ? (
                   <p className="contextDescription">
-                    Description: {item.user.description}
+                    Description: {null}
                   </p>
                 ) : (
                   <p>Description: Dato no encontrado</p>
                 )}
 
-                <p className="contextPrice">Price Big: {cartProductPrice}</p>
+                <p className="contextPrice">Price Big: {item.price1}</p>
               </div>
             );
           })}

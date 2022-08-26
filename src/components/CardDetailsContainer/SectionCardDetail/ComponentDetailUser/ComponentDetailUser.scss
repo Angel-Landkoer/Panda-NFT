@@ -17,6 +17,9 @@
     grid-area: sectionImageUser;
 
     & img {
+      width: 75px;
+      height: 75px;
+
       border-radius: 10px;
     }
   }

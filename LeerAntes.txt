@@ -1,0 +1,52 @@
+Este archivo se genera con el objetivo de guiar donde se encuentra los componentes con un nombre algo diferentes a lo pedido en los desafios
+
+1. Crear componente NavBar( NavBar ):
+    1. Este componente está ubicado en: src/components/Navbar.
+        1. No hubo problemas en ello.
+
+2. Crear componente CartWidget( CartWiget ) y crear ItemContainer( ContainerCardsNFT ).
+    1. Este se encuentra CartWidget: src/components/NavBar/ComponentBtn
+        1. No hubo problemas en ello
+    2. Este se encuentra ubica:  ItemContainer( ContainerCardsNFT ) : src/components/ContainerCardsNFT
+        1. No hubo problemas en ello.
+
+3. Crear botón de conteo ItemCount( ItemCount ):
+    1. Este se encuentra ubicado en: src/componets/ItemCount
+        1. No hubo problemas en ello.
+
+4. Crear componente Item( CardsNFT ) y ItemList( ItemList) :
+    1. Este se encuentra ubicado: Item( CardsNFT ) : src/componets/CardsNFT
+        1. No hubo problemas en ello.
+    2. Este componente no se realizó por verse innecesario
+        1. No se realizó.
+
+5. Crear el componente ItemDetail( SectionCardDetail y SectionDetail ) :
+    1. Este componente los dividí en dos ubicados en: src/components/CardDetailContainer/sectionCardDetail y src/components/CardDetailContainer/sectionDetail
+        1. No hubo muchos problemas, pero a mejorar.
+
+6. Agregar rutas item/:ID( CardNFT/:idCard) , category/:categoryID( CardsNFT/idCategory ) :
+    1. Este se encuentra ubica en: CardDetailContainer, pero expresado en src/pages/Detail:
+        1. Hubo algunos problemas, pero en funcional.
+        
+7. Agregar el contador a la sección de detalle y generar un evento onAdd.
+    1.  Este componente se ubica ItemCount( ItemCount ):  src/componets/ItemCount
+        1. Hubo problemas con el stock, pero solucionado.
+    2. Este componente se ubica ItemDetail( sectionCardDetail ): src/components/CardDetailContainer/sectionCardDetail
+        1. No hubo problemas.
+
+8. Crear y llamar useContext y CartContext:
+    1. Este context se ubica en CartContext : src/Context/
+
+9. Crear componente Cart( Cart ) y agregar algunas funcionalidades desde el context.
+    1. Este componente se ubica Cart( Cart ): src/components/Cart , pero se expresa en src/pages/CardAdd
+        1. No hubo problemas
+
+10. Agregar ruta a Cart( CartAdd ) y vinculado con Cartwidget para algunas funcionalidades
+    1. Este componente se ubica Cart( CartAdd ) : src/pages/CartAdd
+        1. No hubo grandes problemas
+        
+11. Conectar con Firebase para traernos datos y vinculándolo al proyecto
+    1. llamando a firebase desde: 
+        1. CartContext: src/Context
+        2. Detail: src/pages/Detal
+    2. Problemas con Firebase, el almacenar y usar se gasta rápido OJO

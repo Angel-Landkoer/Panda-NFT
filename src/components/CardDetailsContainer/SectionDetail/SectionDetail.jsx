@@ -12,7 +12,7 @@ export function SectionDetail({ data }) {
     "Blockchain",
   ];
 
-  const datas = [data.images.original.hash, data.id, "Text3", "Ethereume"];
+  const datas = [data.hashC, data.idC, "Text3", "Ethereume"];
 
   const [state1, setState1] = useState(false);
   const [state2, setState2] = useState(false);

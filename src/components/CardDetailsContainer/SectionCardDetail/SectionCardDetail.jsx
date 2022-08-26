@@ -1,5 +1,5 @@
 // import hooks
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // import styles
@@ -9,30 +9,28 @@ import "./SectionCardDetail.scss";
 import { ComponentDetailUser } from "./ComponentDetailUser/ComponentDetailUser";
 import { ItemCount } from "../../ItemCount/ItemCount";
 
-export function SectionCardDetail({ data, priceFirst, priceSecond }) {
-  // Api User
-  const [userCreator, setUserCreator] = useState([]);
+export function SectionCardDetail({ data }) {
 
   // cantidad selecciona
-  const [quantitySelected, setQuantitySelected] = useState(0); 
+  const [quantitySelected, setQuantitySelected] = useState(0);
 
   return (
     <>
       <section className="sectionCardDetail">
         <figure className="imageDetail">
-          <img src={data.images.original.url} alt="algo" />
+          <img src={data.imgC} alt="algo" />
         </figure>
         <section className="details">
-          <h3 className="titleCard">{data.username}</h3>
-          <p className="descriptionCard">{data.title}</p>
+          <h3 className="titleCard">{data.nameU}</h3>
+          <p className="descriptionCard">{data.titleC}</p>
           <div className="pricesCard">
             <span className="spanPrice">Price Bid</span>
-            <p className="priceBig">{priceFirst} ETH</p>
+            <p className="priceBig">{data.price1} ETH</p>
             <span className="spanLast">Last Big</span>
-            <p className="lastBig">{priceSecond} ETH</p>
+            <p className="lastBig">{data.price2} ETH</p>
           </div>
-          {userCreator ? (
-            <ComponentDetailUser user={userCreator} />
+          {data ? (
+            <ComponentDetailUser user={data} />
           ) : (
             <span>Cargando usuarios...</span>
           )}

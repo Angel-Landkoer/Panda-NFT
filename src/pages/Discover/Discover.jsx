@@ -1,36 +1,25 @@
 /* eslint-disable no-unused-vars */
 // import Hooks
-import { useState, useEffect } from "react";
-import { getDocs, collection } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
+import { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+// import { getDocs, collection } from "firebase/firestore";
+// import { db } from "../../firebaseConfig";
 
 // import components
+import { CartContext } from "../../Context/CartContext";
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
+// sub-component
+import { Component } from "../../components/CardsNFT/ComponetsCards/Component";
 
 // import styles
 import "./Discover.scss";
 
 export function Discover() {
-  // apiInformation
-  const [dataCard, setDataCard] = useState([]);
+  const { dataCardU, loading } = useContext(CartContext);
+
   // input
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    async function apiCard() {
-      const cardCollection = collection(db, "data");
-      const cardSnapshot = await getDocs(cardCollection);
-      let cardsList = cardSnapshot.docs.map((doc) => {
-        let cards = doc.data();
-        cards.id = doc.id;
-
-        return cards;
-      });
-      return cardsList;
-    }
-
-    apiCard().then((res) => setDataCard(res));
-  }, []);
   //
 
   const handleChange = (e) => {
@@ -42,13 +31,10 @@ export function Discover() {
   let resolve = [];
 
   if (!search) {
-    resolve = dataCard;
+    resolve = dataCardU;
   } else {
-    resolve = dataCard.filter((card) => {
-      return (
-        card.title.toLowerCase().includes(search.toLowerCase()) ||
-        card.username.toLowerCase().includes(search.toLowerCase())
-      );
+    resolve = dataCardU.filter((card) => {
+      return card.titleC.toLowerCase().includes(search.toLowerCase());
     });
   }
 
@@ -85,8 +71,32 @@ export function Discover() {
             </div>
           </section>
           <section className="containerCard">
-            {resolve.map((item) => {
-              return <CardsNFT key={item.id} product={item} />;
+
+            {resolve.map((item, i) => {
+              return (
+                <CardsNFT key={`discover${item.idC}`}>
+                  {item.count > 1 ? (
+                    <span className="spanCount">{item.count}</span>
+                  ) : null}
+                  <img
+                    className="pictureNFT"
+                    src={item.imgC}
+                    alt="imagen de una card"
+                  />
+                  <p className="textNFT">{item.titleC}</p>
+                  <Link to={`/CardNFT/${item.idC}`}>
+                    <button>BSC</button>
+                  </Link>
+                  {loading ? (
+                    <h2>Loading...</h2>
+                  ) : (
+                    <Component
+                      creator={item}
+                      price={item.price2}
+                    />
+                  )}
+                </CardsNFT>
+              );
             })}
           </section>
           <button className="viewMore">View More</button>

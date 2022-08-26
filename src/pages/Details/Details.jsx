@@ -1,6 +1,6 @@
 // import hooks
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { useParams, Link } from "react-router-dom";
 import { getDoc, doc, collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 
@@ -8,73 +8,69 @@ import { db } from "../../firebaseConfig";
 import "./Details.scss";
 
 // import components
+import { CartContext } from "../../Context/CartContext";
 import { ContainerCardsNFT } from "../../components/ContainerCardsNFT/ContainerCardsNFT";
-import { CardDetailsContainer } from "../../components/CardDetailsContainer/CardDetailsContainer";
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
+// sub-component
+import { Component } from "../../components/CardsNFT/ComponetsCards/Component";
+
+import { CardDetailsContainer } from "../../components/CardDetailsContainer/CardDetailsContainer";
 // sub-componentes
 import { SectionCardDetail } from "../../components/CardDetailsContainer/SectionCardDetail/SectionCardDetail";
 import { SectionDetail } from "../../components/CardDetailsContainer/SectionDetail/SectionDetail";
 
 export function Details() {
-  let price1 = Math.floor(Math.random() * 100);
-  let price2 = Math.floor(Math.random() * 100);
+  const { dataCardU, loading } = useContext(CartContext);
 
-  const { idCard } = useParams();
-
-  const [newNFT, setNewNFT] = useState([]);
+  const { idCard, idCategory } = useParams();
 
   // filter
-  const [itemCard, setItemCard] = useState(null);
+  const [itemCard1, setItemCard1] = useState(null);
+  const [itemCards2, setItemCard2] = useState(null);
 
   useEffect(() => {
-    // cards firebase
-    async function apiNFTs() {
-      const cardCollection = collection(db, "data");
-      const cardSnapshot = await getDocs(cardCollection);
-      let cardsList = cardSnapshot.docs.map((doc) => {
-        let cards = doc.data();
-        cards.id = doc.id;
-
-        return cards;
-      });
-      return cardsList;
-    }
-
-    apiNFTs().then((res) => {
-      setNewNFT(res);
-    });
-
     // cards-ID  firebase
-    async function cardID() {
-      const docRef = doc(db, "data", idCard);
+
+    async function cardID1() {
+      const docRef = doc(db, "DataCardU", idCard);
       const docSnapshot = await getDoc(docRef);
       let docData = docSnapshot.data();
       docData.id = docSnapshot.id;
       return docData;
     }
 
-    cardID().then((res) => setItemCard(res));
-  }, [idCard]);
+    cardID1().then((res) => setItemCard1(res));
+
+    async function cardID2() {
+      const docRef = doc(db, "DataCardU", idCategory);
+      const docSnapshot = await getDoc(docRef);
+      let docData = docSnapshot.data();
+      docData.id = docSnapshot.id;
+      return docData;
+    }
+
+    cardID2().then((res) => setItemCard2(res));
+  }, [idCard, idCategory]);
 
   return (
     <>
       <main>
         <section className="mainDatails">
           <CardDetailsContainer>
-            {itemCard ? (
+            {itemCard1 || itemCards2 ? (
               <SectionCardDetail
-                data={itemCard}
-                priceFirst={price1}
-                priceSecond={price2}
+                data={itemCard1 || itemCards2}
               />
             ) : (
               <h4>Cargando detalles...</h4>
             )}
-            {itemCard ? (
-              <SectionDetail data={itemCard} />
+
+            {itemCard1 || itemCards2 ? (
+              <SectionDetail data={itemCard1 || itemCards2} />
             ) : (
               <h4>Cargando otros detalles...</h4>
             )}
+
             <ContainerCardsNFT>
               <div className="titleBtn_flex">
                 <h3>Another NFTs</h3>
@@ -82,8 +78,28 @@ export function Details() {
               </div>
 
               <div className="containerCards_flex">
-                {newNFT.slice(13, 16).map((dataCard) => {
-                  return <CardsNFT key={dataCard.id} product={dataCard} />;
+                {dataCardU.slice(13, 16).map((dataCard) => {
+                  return (
+                    <CardsNFT key={dataCard.idC}>
+                      {dataCard.count > 1 ? (
+                        <span className="spanCount">{dataCard.count}</span>
+                      ) : null}
+                      <img
+                        className="pictureNFT"
+                        src={dataCard.imgC}
+                        alt="imagen de una card"
+                      />
+                      <p className="textNFT">{dataCard.titleC}</p>
+                      <Link to={`/CardsNFT/${dataCard.idC}`}>
+                        <button>BSC</button>
+                      </Link>
+                      {loading ? (
+                        <h2>Loading...</h2>
+                      ) : (
+                        <Component creator={dataCard} price={dataCard.price2} />
+                      )}
+                    </CardsNFT>
+                  );
                 })}
               </div>
             </ContainerCardsNFT>

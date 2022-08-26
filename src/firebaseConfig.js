@@ -3,14 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore'
 // import { getAnalytics } from "firebase/analytics";
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyC1gVBIxAaSV-HRXAoL4KM6tc3ubwssYxI",
-    authDomain: "panda-nft-44791.firebaseapp.com",
-    projectId: "panda-nft-44791",
-    storageBucket: "panda-nft-44791.appspot.com",
-    messagingSenderId: "462577027129",
-    appId: "1:462577027129:web:eed3228a05b6d047b325e8",
-    measurementId: "G-R9Y4CFZLP3"
+    apiKey: "AIzaSyCbEGmENIOMgajq8vflYNB42fjbALukdMs",
+    authDomain: "panta-nfts.firebaseapp.com",
+    projectId: "panta-nfts",
+    storageBucket: "panta-nfts.appspot.com",
+    messagingSenderId: "1033843763428",
+    appId: "1:1033843763428:web:fa513757a1127e6909a4f1"
 };
 
 // Initialize Firebase

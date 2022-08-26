@@ -8,8 +8,8 @@ export function ComponentDetailUser({ user }) {
         <figure className="sectionImageUser">
           <img
             src={
-              user.picture ? (
-                user.picture.medium
+              user.pictureU ? (
+                user.pictureU
               ) : (
                 <span>Aún no se encuentra el autor</span>
               )
@@ -21,8 +21,8 @@ export function ComponentDetailUser({ user }) {
           <span>Creator</span>
           <span>
             <b>
-              {user.name ? (
-                user.name.first
+              {user.nameU ? (
+                user.nameU
               ) : (
                 <span>Aún no se encuentra el autor</span>
               )}

@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.scss';
 
 // import components
+
+import { ContainerCardsNFT } from './components/ContainerCardsNFT/ContainerCardsNFT'
+
 // pages
 import { Home } from './pages/Home/Home';
 import { Discover } from './pages/Discover/Discover';
@@ -30,6 +33,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Discover' element={<Discover />} />
+            <Route path='/CardsNFT/:idCategory' element={<Details />} />
             <Route path='/CardNFT/:idCard' element={<Details />} />
             <Route path='/CartAdd' element={<CartAdd />} />
             <Route path='*' element={<Error />} />
