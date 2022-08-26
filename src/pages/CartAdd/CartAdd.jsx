@@ -17,8 +17,6 @@ export function CartAdd() {
   const { cartProducts, removeCard, booleanToggle, loading } =
     useContext(CartContext);
 
-  console.log("cartProducts: ", cartProducts);
-
   return (
     <>
       <Cart>

@@ -6,8 +6,6 @@ import './App.scss';
 
 // import components
 
-import { ContainerCardsNFT } from './components/ContainerCardsNFT/ContainerCardsNFT'
-
 // pages
 import { Home } from './pages/Home/Home';
 import { Discover } from './pages/Discover/Discover';

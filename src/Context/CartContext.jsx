@@ -83,7 +83,7 @@ export function CartProvider({ children }) {
     //   setDataCardU(allData);
     //   setLoading(false);
 
-    //   console.log("CCC dataCardU: ", dataCardU);
+    //   console.log(" dataCardU: ", dataCardU);
 
     //   // dataCardU.forEach((item) => {
     //   //   setDoc(doc(db, "DataCardU", item.idC), item);

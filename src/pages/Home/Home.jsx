@@ -1,8 +1,6 @@
 // import Hooks
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-// import { collection, getDocs, doc, setDoc } from "firebase/firestore";
-// import { db } from "../../firebaseConfig";
 
 // import components
 import { CartContext } from "../../Context/CartContext";
@@ -19,6 +17,7 @@ import { ContainerCardsNFT } from "../../components/ContainerCardsNFT/ContainerC
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
 // sub-Component
 import { Component } from "../../components/CardsNFT/ComponetsCards/Component";
+
 import { SectionCreateSellNFT } from "../../components/SectionCreateSellNFT/SectionCreateSellNFT";
 // sub-component
 import { Cards } from "../../components/SectionCreateSellNFT/Cards/Cards";
@@ -74,9 +73,6 @@ export function Home() {
 
   // context
   const { dataCardU, loading } = useContext(CartContext);
-  // useStates
-  
-  console.log('HHHH dataCardU: ', dataCardU);
 
   return (
     <>
