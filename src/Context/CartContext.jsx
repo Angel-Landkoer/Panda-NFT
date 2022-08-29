@@ -19,14 +19,9 @@ export function CartProvider({ children }) {
   const [dataCardU, setDataCardU] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // card existences or not
-  const [booleanToggle, setBooleanToggle] = useState(false);
-
   useEffect(() => {
     // DataCardU
-
     // API data
-
     async function dataCards() {
       try {
         const dataCollection = collection(db, "DataCardU");
@@ -46,19 +41,7 @@ export function CartProvider({ children }) {
       setDataCardU(res);
       setLoading(false);
     });
-
-    // show existence of object / or / no
-
-    const existences = () => {
-      const booleanExistence = cartProducts.some((card) => card);
-      if (booleanExistence) {
-        setBooleanToggle(true);
-      } else {
-        setBooleanToggle(false);
-      }
-    };
-    existences();
-  });
+  }, []);
 
   // function add to cart and save the counter in object
 
@@ -101,7 +84,6 @@ export function CartProvider({ children }) {
   // export data
 
   const data = {
-    booleanToggle,
     cartProducts,
     clear,
     setTotalProducts,

@@ -17,8 +17,7 @@ import "./CartAdd.scss";
 import { Modal } from "../../components/Modal/Modal";
 
 export function CartAdd() {
-  const { cartProducts, removeCard, booleanToggle, loading } =
-    useContext(CartContext);
+  const { cartProducts, removeCard, loading } = useContext(CartContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -76,7 +75,6 @@ export function CartAdd() {
     console.log("Orden Generada: ", orderDoc);
   }
 
-  console.log("SectionCartAdd");
 
   return (
     <>
@@ -89,7 +87,7 @@ export function CartAdd() {
         <main>
           <section className="main">
             <section className="containerCards">
-              {booleanToggle ? (
+              {cartProducts.length > 0 ? (
                 cartProducts.map((item) => {
                   return (
                     <div key={item.idC} className="controlCard">

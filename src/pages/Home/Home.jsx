@@ -74,8 +74,6 @@ export function Home() {
   // context
   const { dataCardU, loading } = useContext(CartContext);
 
-  console.log("SectionHome");
-
   return (
     <>
       <header>

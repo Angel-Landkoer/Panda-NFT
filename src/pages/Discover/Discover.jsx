@@ -38,7 +38,6 @@ export function Discover() {
     });
   }
 
-  console.log("SectionDiscover");
 
   return (
     <>
