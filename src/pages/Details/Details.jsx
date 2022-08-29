@@ -1,7 +1,7 @@
 // import hooks
 import { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getDoc, doc, collection, getDocs } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 
 // import styles
@@ -39,8 +39,6 @@ export function Details() {
       return docData;
     }
 
-    cardID1().then((res) => setItemCard1(res));
-
     async function cardID2() {
       const docRef = doc(db, "DataCardU", idCategory);
       const docSnapshot = await getDoc(docRef);
@@ -48,28 +46,42 @@ export function Details() {
       docData.id = docSnapshot.id;
       return docData;
     }
-
+    cardID1().then((res) => setItemCard1(res));
     cardID2().then((res) => setItemCard2(res));
   }, [idCard, idCategory]);
+
+  console.log("SectionDetails");
 
   return (
     <>
       <main>
         <section className="mainDatails">
           <CardDetailsContainer>
-            {itemCard1 || itemCards2 ? (
-              <SectionCardDetail
-                data={itemCard1 || itemCards2}
-              />
+            {itemCard1 ? (
+              <>
+                <SectionCardDetail data={itemCard1} />
+                <SectionDetail data={itemCard1} />
+              </>
+            ) : itemCards2 ? (
+              <>
+                <SectionCardDetail data={itemCards2} />
+                <SectionDetail data={itemCards2} />
+              </>
             ) : (
               <h4>Cargando detalles...</h4>
             )}
 
-            {itemCard1 || itemCards2 ? (
-              <SectionDetail data={itemCard1 || itemCards2} />
+            {/* {itemCard1 ?? itemCards2 ? (
+              <SectionCardDetail data={itemCard1 ?? itemCards2} />
+            ) : (
+              <h4>Cargando detalles...</h4>
+            )}
+
+            {itemCard1 ?? itemCards2 ? (
+              <SectionDetail data={itemCard1 ?? itemCards2} />
             ) : (
               <h4>Cargando otros detalles...</h4>
-            )}
+            )} */}
 
             <ContainerCardsNFT>
               <div className="titleBtn_flex">

@@ -12,7 +12,7 @@
 .main {
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   flex-flow: row wrap;
 
   width: 100%;
@@ -21,9 +21,97 @@
   color: aliceblue;
   background-color: #02050e;
 
+  .containerCards {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    width: 60%;
+    height: auto;
+  }
+
+  .payForAll {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 40%;
+    height: auto;
+
+    & button {
+      width: 200px;
+      height: 50px;
+      margin: 10px;
+
+      color: aliceblue;
+      border: 1px #1e50ff solid;
+
+      background-color: transparent;
+    }
+
+    & button:hover {
+      border: 1px #3b5edb solid;
+
+      background-color: #1e50ff;
+    }
+
+    .totalPriceCard {
+      display: grid;
+      // grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "titleH3 titleH3";
+      padding: 30px;
+
+      width: 90%;
+      height: auto;
+      border: 1px #1e50ff solid;
+
+      border-radius: 10px;
+
+      & h3 {
+        grid-area: titleH3;
+
+        margin: 0 auto 30px auto;
+      }
+
+      .dataTotal {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        align-items: center;
+
+        margin: 0 10px;
+
+        font-size: 15px;
+
+        & span {
+          margin: 5px;
+        }
+      }
+
+      .total {
+        margin: 5px;
+        padding: 5px;
+
+        font-weight: 600;
+
+        color: #06ff11;
+      }
+    }
+  }
+
   .noCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
     height: 80vh;
+
+    & span {
+      margin: 10px 0;
+    }
 
     & button {
       width: 180px;
@@ -41,7 +129,7 @@
     }
   }
 
-  & div {
+  .controlCard {
     display: flex;
     flex-direction: column;
     justify-content: center;

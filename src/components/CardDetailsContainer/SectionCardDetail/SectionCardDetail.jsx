@@ -10,7 +10,6 @@ import { ComponentDetailUser } from "./ComponentDetailUser/ComponentDetailUser";
 import { ItemCount } from "../../ItemCount/ItemCount";
 
 export function SectionCardDetail({ data }) {
-
   // cantidad selecciona
   const [quantitySelected, setQuantitySelected] = useState(0);
 

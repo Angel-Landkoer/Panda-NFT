@@ -10,7 +10,7 @@ export function ItemCount({ init, stock, setQuantitySelected, data }) {
 
   const [dynamic, setDynamic] = useState(false);
 
-  const { someThing } = useContext(CartContext);
+  const { addProductToCart } = useContext(CartContext);
 
   const addProduct = (num) => {
     setCount(count + num);
@@ -18,7 +18,7 @@ export function ItemCount({ init, stock, setQuantitySelected, data }) {
 
   const onAdd = () => {
     setQuantitySelected(count);
-    someThing(data, count);
+    addProductToCart(data, count);
     if (count > 0) {
       setDynamic(true);
     }

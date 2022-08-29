@@ -5,12 +5,12 @@ import { getFirestore } from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCbEGmENIOMgajq8vflYNB42fjbALukdMs",
-    authDomain: "panta-nfts.firebaseapp.com",
-    projectId: "panta-nfts",
-    storageBucket: "panta-nfts.appspot.com",
-    messagingSenderId: "1033843763428",
-    appId: "1:1033843763428:web:fa513757a1127e6909a4f1"
+    apiKey: "AIzaSyBcrnZzwOMwvtYFknRG0WMH4HuyANJA0a4",
+    authDomain: "pandantfs.firebaseapp.com",
+    projectId: "pandantfs",
+    storageBucket: "pandantfs.appspot.com",
+    messagingSenderId: "919801623586",
+    appId: "1:919801623586:web:eb69c561de36bc213d467b"
 };
 
 // Initialize Firebase

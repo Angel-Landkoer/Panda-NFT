@@ -1,0 +1,95 @@
+.containerModal {
+  position: relative;
+  inset: -320px 0px 0px 0px;
+
+  width: 80%;
+  height: 50vh;
+  border: 1px #3b5edb solid;
+
+  border-radius: 10px;
+  background-color: #02050e;
+  z-index: 1;
+  // position: relative;
+  // inset: -320px 0px 0px 0px;
+
+  // width: 80%;
+  // height: 50vh;
+  // border: 1px #3b5edb solid;
+
+  // border-radius: 10px;
+  // background-color: #02050e;
+  // z-index: 1;
+
+  & h2 {
+    margin: 18px 0 10px 30px;
+  }
+
+  .closeModal {
+    position: absolute;
+    inset: 15px 0px 0px 97%;
+
+    & i {
+      font-size: 27px;
+    }
+  }
+
+  .successTrue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 20vh;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px white solid;
+  }
+
+  form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 35vh;
+
+    & label {
+      padding: 10px;
+      margin: 10px;
+
+      & span {
+        margin: 0 10px;
+
+        font-size: 18px;
+      }
+
+      & input {
+        padding: 5px;
+
+        font-size: 17px;
+      }
+    }
+
+    & button {
+      width: 175px;
+      height: 50px;
+      border: 1px #3b5edb solid;
+
+      font-size: 17px;
+
+      color: aliceblue;
+      border-radius: 8px;
+      background-color: transparent;
+    }
+
+    & button:hover {
+      background-color: #1e50ff;
+    }
+
+    & button:active {
+      border: 2px #06ff11 solid;
+    }
+  }
+}

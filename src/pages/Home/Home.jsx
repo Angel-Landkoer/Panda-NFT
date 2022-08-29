@@ -28,11 +28,11 @@ import "./Home.scss";
 export function Home() {
   // del componente - sectionLogos
   const logos = [
-    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item.png?raw=true",
-    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(1).png?raw=true",
-    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(2).png?raw=true",
-    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Item%20(3).png?raw=true",
-    "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/Tokocrypto%201.png?raw=true",
+    "https://firebasestorage.googleapis.com/v0/b/panda-nft-44791.appspot.com/o/picturesPanda%2FItem.png?alt=media&token=0badf088-0e66-4f1b-bee1-16bcc211c8c0",
+    "https://firebasestorage.googleapis.com/v0/b/panda-nft-44791.appspot.com/o/picturesPanda%2FItem%20(1).png?alt=media&token=324ae486-6501-46cb-967d-dda910025480",
+    "https://firebasestorage.googleapis.com/v0/b/panda-nft-44791.appspot.com/o/picturesPanda%2FItem%20(2).png?alt=media&token=7b4ce90f-1918-4088-b99b-88774bc0145e",
+    "https://firebasestorage.googleapis.com/v0/b/panda-nft-44791.appspot.com/o/picturesPanda%2FCoinbase%20New%202021%201.png?alt=media&token=3d72be1a-3491-40f6-b551-e4e68f97e895",
+    "https://firebasestorage.googleapis.com/v0/b/panda-nft-44791.appspot.com/o/picturesPanda%2FTokocrypto%201.png?alt=media&token=8ff7f355-8ff6-4ef7-8aa4-44ffc971d043",
   ];
 
   // del componente - SectionCreateSellNFT
@@ -41,19 +41,19 @@ export function Home() {
       title: "Set up your wallet",
       paragraph:
         "Once you’ve set up your wallet of choice, connect it to OpenSea by clicking the wallet icon in the top right corner.",
-      img: "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/IconPlaceholder.png?raw=true",
+      img: "https://firebasestorage.googleapis.com/v0/b/panda-nft-44791.appspot.com/o/picturesPanda%2FIconPlaceholder.png?alt=media&token=d310a53c-06d0-42be-8155-206216a99c01",
     },
     {
       title: "Add your NFTs",
       paragraph:
         "Once you’ve set up your wallet of choice, connect it to OpenSea by clicking the wallet icon in the top right corner.",
-      img: "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/IconPlaceholder.png?raw=true",
+      img: "https://firebasestorage.googleapis.com/v0/b/panda-nft-44791.appspot.com/o/picturesPanda%2FIconPlaceholder.png?alt=media&token=d310a53c-06d0-42be-8155-206216a99c01",
     },
     {
       title: "List them for sale",
       paragraph:
         "Once you’ve set up your wallet of choice, connect it to OpenSea by clicking the wallet icon in the top right corner.",
-      img: "https://github.com/Angel-Landkoer/The-pictures/blob/master/reac-Pandas_NFT/IconPlaceholder.png?raw=true",
+      img: "https://firebasestorage.googleapis.com/v0/b/panda-nft-44791.appspot.com/o/picturesPanda%2FIconPlaceholder.png?alt=media&token=d310a53c-06d0-42be-8155-206216a99c01",
     },
   ];
 
@@ -73,6 +73,8 @@ export function Home() {
 
   // context
   const { dataCardU, loading } = useContext(CartContext);
+
+  console.log("SectionHome");
 
   return (
     <>

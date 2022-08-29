@@ -12,7 +12,7 @@ export function CardNFT({ description, image }) {
         <p className="parrafoFirst">{description}</p>
         <button>BSC</button>
         <Component
-          imagen={"https://randomuser.me/api/portraits/thumb/women/1.jpg"}
+          imagen={"https://randomuser.me/api/portraits/women/89.jpg"}
           creator={"beautifulpanda941"}
           price={238205}
         />

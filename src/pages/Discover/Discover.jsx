@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // import Hooks
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 // import { getDocs, collection } from "firebase/firestore";
 // import { db } from "../../firebaseConfig";
@@ -38,7 +38,8 @@ export function Discover() {
     });
   }
 
-  //
+  console.log("SectionDiscover");
+
   return (
     <>
       <header>
@@ -71,7 +72,6 @@ export function Discover() {
             </div>
           </section>
           <section className="containerCard">
-
             {resolve.map((item, i) => {
               return (
                 <CardsNFT key={`discover${item.idC}`}>
@@ -90,10 +90,7 @@ export function Discover() {
                   {loading ? (
                     <h2>Loading...</h2>
                   ) : (
-                    <Component
-                      creator={item}
-                      price={item.price2}
-                    />
+                    <Component creator={item} price={item.price2} />
                   )}
                 </CardsNFT>
               );
