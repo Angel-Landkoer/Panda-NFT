@@ -1,5 +1,5 @@
 // import Hooks
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 // import components
@@ -59,7 +59,13 @@ export function Home() {
 
   // del componente ContainercardsNFT
 
-  const titles = ["Live Auctions", "Featured Artist"];
+  // const titles = ["Live Auctions", "Featured Artist"];
+
+  const titles = {
+    title1: "Live Auctions",
+    title2: "Featured Artist",
+  };
+  const { title1, title2 } = titles;
 
   // del componente - sectionCreateYourOwnNFT
   const sectionCreateYourOwnNFT = [
@@ -73,6 +79,33 @@ export function Home() {
 
   // context
   const { dataCardU, loading } = useContext(CartContext);
+
+  // State ContainerCardsNFT
+  const [moreOrLess, setMoreOrLess] = useState(4);
+  const [moreOrLessToggle, setMoreOrLessToggle] = useState(false);
+
+  const [moreOrLess2, setMoreOrLess2] = useState(15)
+  const [moreOrLessToggle2, setMoreOrLessToggle2] = useState(false)
+
+  // State ContainerMultipleOptionsCardsNFT
+  const [moreOrLess3, setMoreOrLess3] = useState(11);
+  const [moreOrLessToggle3, setMoreOrLessToggle3] = useState(false);
+
+  const handleMoreContainerCards1 = () => {
+    setMoreOrLessToggle(!moreOrLessToggle);
+    moreOrLessToggle ? setMoreOrLess(4) : setMoreOrLess(7);
+  };
+
+    const handleMoreContainerCards2 = () => {
+      setMoreOrLessToggle2(!moreOrLessToggle2);
+    moreOrLessToggle2 ? setMoreOrLess2(15) : setMoreOrLess2(18);
+  };
+
+  // ContainerMultipleOptionsCardsNFT
+  const handleMoreContainerMultiple = () => {
+    setMoreOrLessToggle3(!moreOrLessToggle3);
+    moreOrLessToggle3 ? setMoreOrLess3(11) : setMoreOrLess3(18);
+  };
 
   return (
     <>
@@ -96,7 +129,7 @@ export function Home() {
                 <figure key={`logo${i}`}>
                   <img src={logo} alt={`logo${i}`} />
                 </figure>
-              );
+              ); 
             })}
           </SectionLogos>
 
@@ -119,47 +152,78 @@ export function Home() {
           </SectionCreateSellNFT>
 
           {/*        section         */}
-          {titles.map((item) => {
-            return (
-              <ContainerCardsNFT key={item}>
-                <div className="titleBtn_flex">
-                  <h3>{item}</h3>
-                  <button>View More</button>
-                </div>
 
-                <div className="containerCards_flex">
-                  {dataCardU.slice(1, 4).map((dataCard) => {
-                    return (
-                      <CardsNFT key={dataCard.idC}>
-                        {dataCard.count > 1 ? (
-                          <span className="spanCount">{dataCard.count}</span>
-                        ) : null}
-                        <img
-                          className="pictureNFT"
-                          src={dataCard.imgC}
-                          alt="imagen de una card"
-                        />
-                        <p className="textNFT">{dataCard.titleC}</p>
+          <ContainerCardsNFT>
+            <div className="titleBtn_flex">
+              <h3>{title1}</h3>
+              <button onClick={handleMoreContainerCards1}>
+                {moreOrLessToggle ? "View Less" : "View More"}
+              </button>
+            </div>
+            <div className="containerCards_flex">
+              {dataCardU.slice(1, moreOrLess).map((dataCard) => {
+                return (
+                  <CardsNFT key={dataCard.idC}>
+                    {dataCard.count > 1 ? (
+                      <span className="spanCount">{dataCard.count}</span>
+                    ) : null}
+                    <img
+                      className="pictureNFT"
+                      src={dataCard.imgC}
+                      alt="imagen de una card"
+                    />
+                    <p className="textNFT">{dataCard.titleC}</p>
 
-                        <Link to={`/CardsNFT/${dataCard.idC}`}>
-                          <button>BSC</button>
-                        </Link>
+                    <Link to={`/CardsNFT/${dataCard.idC}`}>
+                      <button>BSC</button>
+                    </Link>
 
-                        {loading ? (
-                          <h2>Loading...</h2>
-                        ) : (
-                          <Component
-                            creator={dataCard}
-                            price={dataCard.price2}
-                          />
-                        )}
-                      </CardsNFT>
-                    );
-                  })}
-                </div>
-              </ContainerCardsNFT>
-            );
-          })}
+                    {loading ? (
+                      <h2>Loading...</h2>
+                    ) : (
+                      <Component creator={dataCard} price={dataCard.price2} />
+                    )}
+                  </CardsNFT>
+                );
+              })}
+            </div>
+          </ContainerCardsNFT>
+
+          <ContainerCardsNFT>
+            <div className="titleBtn_flex">
+              <h3>{title2}</h3>
+              <button onClick={handleMoreContainerCards2}>
+                {moreOrLessToggle2 ? "View Less" : "View More"}
+              </button>
+            </div>
+            <div className="containerCards_flex">
+              {dataCardU.slice(12, moreOrLess2).map((dataCard) => {
+                return (
+                  <CardsNFT key={dataCard.idC}>
+                    {dataCard.count > 1 ? (
+                      <span className="spanCount">{dataCard.count}</span>
+                    ) : null}
+                    <img
+                      className="pictureNFT"
+                      src={dataCard.imgC}
+                      alt="imagen de una card"
+                    />
+                    <p className="textNFT">{dataCard.titleC}</p>
+
+                    <Link to={`/CardsNFT/${dataCard.idC}`}>
+                      <button>BSC</button>
+                    </Link>
+
+                    {loading ? (
+                      <h2>Loading...</h2>
+                    ) : (
+                      <Component creator={dataCard} price={dataCard.price2} />
+                    )}
+                  </CardsNFT>
+                );
+              })}
+            </div>
+          </ContainerCardsNFT>
 
           {/*    section        */}
           <ContainerMultipleOptionsCardsNFT>
@@ -175,7 +239,7 @@ export function Home() {
               </div>
             </div>
             <div className="containerCards_flex">
-              {dataCardU.slice(5, 11).map((dataCard) => {
+              {dataCardU.slice(5, moreOrLess3).map((dataCard) => {
                 return (
                   <CardsNFT key={`MultipleOptions ${dataCard.idC}`}>
                     {dataCard.count > 1 ? (
@@ -205,7 +269,9 @@ export function Home() {
                 );
               })}
             </div>
-            <button className="viewMore">View More</button>
+            <button className="viewMore" onClick={handleMoreContainerMultiple}>
+              {moreOrLessToggle3 ? "View Less" : "View More"}
+            </button>
           </ContainerMultipleOptionsCardsNFT>
           {/*    section        */}
           <SectionCreateYourOwnNFT>

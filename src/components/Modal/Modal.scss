@@ -1,6 +1,10 @@
 .containerModal {
   position: relative;
   inset: -320px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 
   width: 80%;
   height: 50vh;
@@ -9,6 +13,7 @@
   border-radius: 10px;
   background-color: #02050e;
   z-index: 1;
+
   // position: relative;
   // inset: -320px 0px 0px 0px;
 
@@ -44,6 +49,21 @@
     margin: 0 auto;
     text-align: center;
     border: 1px white solid;
+  }
+
+  .backModal {
+    width: 110px;
+    height: 35px;
+    border: 1px #3b5edb solid;
+    color: aliceblue;
+    border-radius: 5px;
+    background-color: #1e50ff;
+  }
+
+  .backModal:hover {
+    border: 1 #1e50ff solid;
+
+    background-color: #3b5edb;
   }
 
   form {

@@ -2,8 +2,6 @@
 // import Hooks
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-// import { getDocs, collection } from "firebase/firestore";
-// import { db } from "../../firebaseConfig";
 
 // import components
 import { CartContext } from "../../Context/CartContext";
@@ -22,6 +20,10 @@ export function Discover() {
 
   //
 
+  const [algo, setAlgo] = useState([...dataCardU]);
+  const [toggle, setToggle] = useState(true);
+  const [stock, setStock] = useState([]);
+
   const handleChange = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
@@ -38,6 +40,16 @@ export function Discover() {
     });
   }
 
+  let filterWords = [];
+
+  const handleChangeCategory = (e) => {
+    // alert(e.target.name.toLowerCase());
+    filterWords = algo.filter((card) =>
+      card.titleC.toLowerCase().includes(e.target.name.toLowerCase())
+    );
+    setToggle(!toggle);
+    setStock(filterWords);
+  };
 
   return (
     <>
@@ -62,38 +74,98 @@ export function Discover() {
               <button>Sort By</button>
             </div>
             <div className="someCategories">
-              <button className="btnMusic">Music</button>
-              <button className="btnArt">Art</button>
-              <button className="btnSport">Sport</button>
-              <button className="btnVirtual">Virtual</button>
-              <button className="btnVideos">Videos</button>
-              <button className="btnMore">More</button>
+              <button
+                className="btnMusic"
+                name="Music"
+                onClick={handleChangeCategory}
+              >
+                Music
+              </button>
+              <button
+                className="btnArt"
+                name="Art"
+                onClick={handleChangeCategory}
+              >
+                Art
+              </button>
+              <button
+                className="btnSport"
+                name="Sport"
+                onClick={handleChangeCategory}
+              >
+                Sport
+              </button>
+              <button
+                className="btnVirtual"
+                name="Virtual"
+                onClick={handleChangeCategory}
+              >
+                Virtual
+              </button>
+              <button
+                className="btnVideos"
+                name="Videos"
+                onClick={handleChangeCategory}
+              >
+                Videos
+              </button>
+              <button
+                className="btnMore"
+                name="More"
+                onClick={handleChangeCategory}
+              >
+                More
+              </button>
             </div>
           </section>
           <section className="containerCard">
-            {resolve.map((item, i) => {
-              return (
-                <CardsNFT key={`discover${item.idC}`}>
-                  {item.count > 1 ? (
-                    <span className="spanCount">{item.count}</span>
-                  ) : null}
-                  <img
-                    className="pictureNFT"
-                    src={item.imgC}
-                    alt="imagen de una card"
-                  />
-                  <p className="textNFT">{item.titleC}</p>
-                  <Link to={`/CardNFT/${item.idC}`}>
-                    <button>BSC</button>
-                  </Link>
-                  {loading ? (
-                    <h2>Loading...</h2>
-                  ) : (
-                    <Component creator={item} price={item.price2} />
-                  )}
-                </CardsNFT>
-              );
-            })}
+            {toggle
+              ? resolve.map((item, i) => {
+                  return (
+                    <CardsNFT key={`discover${item.idC}`}>
+                      {item.count > 1 ? (
+                        <span className="spanCount">{item.count}</span>
+                      ) : null}
+                      <img
+                        className="pictureNFT"
+                        src={item.imgC}
+                        alt="imagen de una card"
+                      />
+                      <p className="textNFT">{item.titleC}</p>
+                      <Link to={`/CardNFT/${item.idC}`}>
+                        <button>BSC</button>
+                      </Link>
+                      {loading ? (
+                        <h2>Loading...</h2>
+                      ) : (
+                        <Component creator={item} price={item.price2} />
+                      )}
+                    </CardsNFT>
+                  );
+                })
+              : stock.map((item, i) => {
+                  return (
+                    <CardsNFT key={`discover${item.idC}`}>
+                      {item.count > 1 ? (
+                        <span className="spanCount">{item.count}</span>
+                      ) : null}
+                      <img
+                        className="pictureNFT"
+                        src={item.imgC}
+                        alt="imagen de una card"
+                      />
+                      <p className="textNFT">{item.titleC}</p>
+                      <Link to={`/CardNFT/${item.idC}`}>
+                        <button>BSC</button>
+                      </Link>
+                      {loading ? (
+                        <h2>Loading...</h2>
+                      ) : (
+                        <Component creator={item} price={item.price2} />
+                      )}
+                    </CardsNFT>
+                  );
+                })}
           </section>
           <button className="viewMore">View More</button>
         </section>

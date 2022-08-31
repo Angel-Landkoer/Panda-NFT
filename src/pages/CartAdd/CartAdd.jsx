@@ -6,6 +6,7 @@ import { db } from "../../firebaseConfig";
 
 // import component
 import { Cart } from "../../components/Cart/Cart";
+import { Modal } from "../../components/Modal/Modal";
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
 // sub- component
 import { Component } from "../../components/CardsNFT/ComponetsCards/Component";
@@ -14,7 +15,6 @@ import { CartContext } from "../../Context/CartContext";
 
 // import styles
 import "./CartAdd.scss";
-import { Modal } from "../../components/Modal/Modal";
 
 export function CartAdd() {
   const { cartProducts, removeCard, loading } = useContext(CartContext);
@@ -74,7 +74,6 @@ export function CartAdd() {
     setSuccess(orderDoc.id);
     console.log("Orden Generada: ", orderDoc);
   }
-
 
   return (
     <>

@@ -95,8 +95,6 @@ export function CartProvider({ children }) {
     dataCardU,
   };
 
-  console.log("SectionContext");
-
   return (
     <>
       <CartContext.Provider value={data}>{children}</CartContext.Provider>
