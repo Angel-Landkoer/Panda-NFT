@@ -11,8 +11,6 @@ import "./Details.scss";
 import { CartContext } from "../../Context/CartContext";
 import { ContainerCardsNFT } from "../../components/ContainerCardsNFT/ContainerCardsNFT";
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
-// sub-component
-import { Component } from "../../components/CardsNFT/ComponetsCards/Component";
 
 import { CardDetailsContainer } from "../../components/CardDetailsContainer/CardDetailsContainer";
 // sub-componentes
@@ -52,7 +50,6 @@ export function Details() {
     cardID2().then((res) => setItemCard2(res));
   }, [idCard, idCategory]);
 
-
   return (
     <>
       <main>
@@ -79,24 +76,10 @@ export function Details() {
               <div className="containerCards_flex">
                 {dataCardU.slice(13, 16).map((dataCard) => {
                   return (
-                    <CardsNFT key={dataCard.idC}>
-                      {dataCard.count > 1 ? (
-                        <span className="spanCount">{dataCard.count}</span>
-                      ) : null}
-                      <img
-                        className="pictureNFT"
-                        src={dataCard.imgC}
-                        alt="imagen de una card"
-                      />
-                      <p className="textNFT">{dataCard.titleC}</p>
+                    <CardsNFT key={dataCard.idC} dataCard={dataCard}>
                       <Link to={`/CardsNFT/${dataCard.idC}`}>
                         <button>BSC</button>
                       </Link>
-                      {loading ? (
-                        <h2>Loading...</h2>
-                      ) : (
-                        <Component creator={dataCard} price={dataCard.price2} />
-                      )}
                     </CardsNFT>
                   );
                 })}

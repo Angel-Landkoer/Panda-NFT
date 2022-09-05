@@ -53,9 +53,9 @@
     justify-content: space-evenly;
     align-items: center;
 
-    & span {
-      padding: 5px;
-    }
+    // & span {
+    //   padding: 5px;
+    // }
 
     .less {
       width: 40px;
@@ -105,5 +105,45 @@
     color: aliceblue;
     border-radius: 10px;
     background-color: #1e50ff;
+  }
+
+  .creatorNFT {
+    display: grid;
+    grid-area: infoCreator;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    grid-template-areas:
+      "imagen creator creator price"
+      "imagen creator creator price";
+
+    padding: 15px;
+
+    font-size: 14px;
+
+    & img {
+      grid-area: imagen;
+
+      width: 56px;
+      height: 56px;
+
+      border-radius: 10px;
+    }
+
+    .containerCreator {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      grid-area: creator;
+    }
+
+    .containerPrice {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      grid-area: price;
+    }
   }
 }

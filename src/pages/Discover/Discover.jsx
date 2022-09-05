@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 // import components
 import { CartContext } from "../../Context/CartContext";
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
-// sub-component
-import { Component } from "../../components/CardsNFT/ComponetsCards/Component";
 
 // import styles
 import "./Discover.scss";
@@ -122,47 +120,19 @@ export function Discover() {
             {toggle
               ? resolve.map((item, i) => {
                   return (
-                    <CardsNFT key={`discover${item.idC}`}>
-                      {item.count > 1 ? (
-                        <span className="spanCount">{item.count}</span>
-                      ) : null}
-                      <img
-                        className="pictureNFT"
-                        src={item.imgC}
-                        alt="imagen de una card"
-                      />
-                      <p className="textNFT">{item.titleC}</p>
+                    <CardsNFT key={`discover${item.idC}`} dataCard={item}>
                       <Link to={`/CardNFT/${item.idC}`}>
                         <button>BSC</button>
                       </Link>
-                      {loading ? (
-                        <h2>Loading...</h2>
-                      ) : (
-                        <Component creator={item} price={item.price2} />
-                      )}
                     </CardsNFT>
                   );
                 })
               : stock.map((item, i) => {
                   return (
-                    <CardsNFT key={`discover${item.idC}`}>
-                      {item.count > 1 ? (
-                        <span className="spanCount">{item.count}</span>
-                      ) : null}
-                      <img
-                        className="pictureNFT"
-                        src={item.imgC}
-                        alt="imagen de una card"
-                      />
-                      <p className="textNFT">{item.titleC}</p>
+                    <CardsNFT key={`discover${item.idC}`} dataCard={item}>
                       <Link to={`/CardNFT/${item.idC}`}>
                         <button>BSC</button>
                       </Link>
-                      {loading ? (
-                        <h2>Loading...</h2>
-                      ) : (
-                        <Component creator={item} price={item.price2} />
-                      )}
                     </CardsNFT>
                   );
                 })}

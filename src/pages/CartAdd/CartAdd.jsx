@@ -8,8 +8,6 @@ import { db } from "../../firebaseConfig";
 import { Cart } from "../../components/Cart/Cart";
 import { Modal } from "../../components/Modal/Modal";
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
-// sub- component
-import { Component } from "../../components/CardsNFT/ComponetsCards/Component";
 
 import { CartContext } from "../../Context/CartContext";
 
@@ -89,27 +87,9 @@ export function CartAdd() {
               {cartProducts.length > 0 ? (
                 cartProducts.map((item) => {
                   return (
-                    <div key={item.idC} className="controlCard">
-                      <CardsNFT>
-                        {item.count > 1 ? (
-                          <span className="spanCount">{item.count}</span>
-                        ) : null}
-                        <img
-                          className="pictureNFT"
-                          src={item.imgC}
-                          alt="imagen de una card"
-                        />
-                        <p className="textNFT">{item.titleC}</p>
-                        {loading ? (
-                          <h2>Loading...</h2>
-                        ) : (
-                          <Component
-                            key={item.passwordU}
-                            creator={item}
-                            price={item.price1}
-                          />
-                        )}
-                      </CardsNFT>
+                    <section key={item.idC} className="controlCard">
+                      <CardsNFT dataCard={item} />
+
                       <button
                         onClick={() => removeCard(item.idC)}
                         className="btnRemove"
@@ -117,7 +97,7 @@ export function CartAdd() {
                         Eliminar
                         <i className="fa-solid fa-trash-can"></i>
                       </button>
-                    </div>
+                    </section>
                   );
                 })
               ) : (

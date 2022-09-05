@@ -15,12 +15,8 @@ import { ContainerMultipleOptionsCardsNFT } from "../../components/ContainerMult
 import { SectionCreateYourOwnNFT } from "../../components/SectionCreateYourOwnNFT/SectionCreateYourOwnNFT";
 import { ContainerCardsNFT } from "../../components/ContainerCardsNFT/ContainerCardsNFT";
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
-// sub-Component
-import { Component } from "../../components/CardsNFT/ComponetsCards/Component";
 
-import { SectionCreateSellNFT } from "../../components/SectionCreateSellNFT/SectionCreateSellNFT";
-// sub-component
-import { Cards } from "../../components/SectionCreateSellNFT/Cards/Cards";
+import { SectionCreateSellNFT } from "../../components/SectionCreateSellNFT/SectionCreateSellNFT"; 
 
 // import styles
 import "./Home.scss";
@@ -84,8 +80,8 @@ export function Home() {
   const [moreOrLess, setMoreOrLess] = useState(4);
   const [moreOrLessToggle, setMoreOrLessToggle] = useState(false);
 
-  const [moreOrLess2, setMoreOrLess2] = useState(15)
-  const [moreOrLessToggle2, setMoreOrLessToggle2] = useState(false)
+  const [moreOrLess2, setMoreOrLess2] = useState(15);
+  const [moreOrLessToggle2, setMoreOrLessToggle2] = useState(false);
 
   // State ContainerMultipleOptionsCardsNFT
   const [moreOrLess3, setMoreOrLess3] = useState(11);
@@ -96,8 +92,8 @@ export function Home() {
     moreOrLessToggle ? setMoreOrLess(4) : setMoreOrLess(7);
   };
 
-    const handleMoreContainerCards2 = () => {
-      setMoreOrLessToggle2(!moreOrLessToggle2);
+  const handleMoreContainerCards2 = () => {
+    setMoreOrLessToggle2(!moreOrLessToggle2);
     moreOrLessToggle2 ? setMoreOrLess2(15) : setMoreOrLess2(18);
   };
 
@@ -123,33 +119,13 @@ export function Home() {
       <main>
         {/*       section        */}
         <section className="mainHome">
-          <SectionLogos>
-            {logos.map((logo, i) => {
-              return (
-                <figure key={`logo${i}`}>
-                  <img src={logo} alt={`logo${i}`} />
-                </figure>
-              ); 
-            })}
-          </SectionLogos>
+          <SectionLogos logos={logos} />
 
           {/*        section        */}
-          <SectionCreateSellNFT>
-            <h2>Create and sell your NFTs</h2>
-            <div className="containeCards">
-              {cardsContext.map((context, i) => {
-                return (
-                  <Cards key={`CardsStatic${i}`}>
-                    <figure>
-                      <img src={context.img} alt="img" />
-                    </figure>
-                    <h3>{context.title}</h3>
-                    <p>{context.paragraph}</p>
-                  </Cards>
-                );
-              })}
-            </div>
-          </SectionCreateSellNFT>
+          <SectionCreateSellNFT
+            cardsContext={cardsContext}
+            title={"Create and sell your NFTs"}
+          />
 
           {/*        section         */}
 
@@ -163,26 +139,10 @@ export function Home() {
             <div className="containerCards_flex">
               {dataCardU.slice(1, moreOrLess).map((dataCard) => {
                 return (
-                  <CardsNFT key={dataCard.idC}>
-                    {dataCard.count > 1 ? (
-                      <span className="spanCount">{dataCard.count}</span>
-                    ) : null}
-                    <img
-                      className="pictureNFT"
-                      src={dataCard.imgC}
-                      alt="imagen de una card"
-                    />
-                    <p className="textNFT">{dataCard.titleC}</p>
-
+                  <CardsNFT key={dataCard.idC} dataCard={dataCard}>
                     <Link to={`/CardsNFT/${dataCard.idC}`}>
                       <button>BSC</button>
                     </Link>
-
-                    {loading ? (
-                      <h2>Loading...</h2>
-                    ) : (
-                      <Component creator={dataCard} price={dataCard.price2} />
-                    )}
                   </CardsNFT>
                 );
               })}
@@ -199,26 +159,10 @@ export function Home() {
             <div className="containerCards_flex">
               {dataCardU.slice(12, moreOrLess2).map((dataCard) => {
                 return (
-                  <CardsNFT key={dataCard.idC}>
-                    {dataCard.count > 1 ? (
-                      <span className="spanCount">{dataCard.count}</span>
-                    ) : null}
-                    <img
-                      className="pictureNFT"
-                      src={dataCard.imgC}
-                      alt="imagen de una card"
-                    />
-                    <p className="textNFT">{dataCard.titleC}</p>
-
+                  <CardsNFT key={dataCard.idC} dataCard={dataCard}>
                     <Link to={`/CardsNFT/${dataCard.idC}`}>
                       <button>BSC</button>
                     </Link>
-
-                    {loading ? (
-                      <h2>Loading...</h2>
-                    ) : (
-                      <Component creator={dataCard} price={dataCard.price2} />
-                    )}
                   </CardsNFT>
                 );
               })}
@@ -241,30 +185,13 @@ export function Home() {
             <div className="containerCards_flex">
               {dataCardU.slice(5, moreOrLess3).map((dataCard) => {
                 return (
-                  <CardsNFT key={`MultipleOptions ${dataCard.idC}`}>
-                    {dataCard.count > 1 ? (
-                      <span className="spanCount">{dataCard.count}</span>
-                    ) : null}
-                    <img
-                      className="pictureNFT"
-                      src={dataCard.imgC}
-                      alt="imagen de una card"
-                    />
-                    <p className="textNFT">{dataCard.titleC}</p>
-
+                  <CardsNFT
+                    key={`MultipleOptions ${dataCard.idC}`}
+                    dataCard={dataCard}
+                  >
                     <Link to={`/CardsNFT/${dataCard.idC}`}>
                       <button>BSC</button>
-                    </Link>
-
-                    {loading ? (
-                      <h2>Loading...</h2>
-                    ) : (
-                      <Component
-                        key={dataCard.passwordU}
-                        creator={dataCard}
-                        price={dataCard.price2}
-                      />
-                    )}
+                    </Link> 
                   </CardsNFT>
                 );
               })}
@@ -273,21 +200,11 @@ export function Home() {
               {moreOrLessToggle3 ? "View Less" : "View More"}
             </button>
           </ContainerMultipleOptionsCardsNFT>
+
           {/*    section        */}
-          <SectionCreateYourOwnNFT>
-            {sectionCreateYourOwnNFT.map((item, i) => {
-              return (
-                <section
-                  key={`yourOwn${i}`}
-                  className="sectionCreateYourOwnNFT"
-                >
-                  <h3>{item.title}</h3>
-                  <p>{item.paragraph}</p>
-                  <button>{item.btn}</button>
-                </section>
-              );
-            })}
-          </SectionCreateYourOwnNFT>
+          <SectionCreateYourOwnNFT
+            sectionCreateYourOwnNFT={sectionCreateYourOwnNFT}
+          />
         </section>
       </main>
     </>
