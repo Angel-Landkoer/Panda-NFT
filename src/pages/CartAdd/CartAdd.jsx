@@ -87,7 +87,7 @@ export function CartAdd() {
               {cartProducts.length > 0 ? (
                 cartProducts.map((item) => {
                   return (
-                    <section key={item.idC} className="controlCard">
+                    <section key={`CartAdd-${item.idC}`} className="controlCard">
                       <CardsNFT dataCard={item} />
 
                       <button
@@ -115,7 +115,7 @@ export function CartAdd() {
                 <h3>Resume del pedido</h3>
                 {cartProducts.map((cardPrice) => {
                   return (
-                    <div key={cardPrice.titleC} className="dataTotal">
+                    <div key={`CardAdd-${cardPrice.titleC}`} className="dataTotal">
                       <span>{`Title: ${cardPrice.titleC}`}</span>
                       <span>{`Price: ${cardPrice.price1}`}</span>
                     </div>

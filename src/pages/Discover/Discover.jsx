@@ -120,7 +120,7 @@ export function Discover() {
             {toggle
               ? resolve.map((item, i) => {
                   return (
-                    <CardsNFT key={`discover${item.idC}`} dataCard={item}>
+                    <CardsNFT key={`discover-${item.idC}`} dataCard={item}>
                       <Link to={`/CardNFT/${item.idC}`}>
                         <button>BSC</button>
                       </Link>
@@ -129,7 +129,10 @@ export function Discover() {
                 })
               : stock.map((item, i) => {
                   return (
-                    <CardsNFT key={`discover${item.idC}`} dataCard={item}>
+                    <CardsNFT
+                      key={`discover-${item.passwordU}`}
+                      dataCard={item}
+                    >
                       <Link to={`/CardNFT/${item.idC}`}>
                         <button>BSC</button>
                       </Link>

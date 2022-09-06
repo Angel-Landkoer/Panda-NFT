@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import "./SectionCardDetail.scss";
 
 // import components
-import { ComponentDetailUser } from "./ComponentDetailUser/ComponentDetailUser";
 import { ItemCount } from "../../ItemCount/ItemCount";
 
 export function SectionCardDetail({ data }) {
@@ -28,11 +27,33 @@ export function SectionCardDetail({ data }) {
             <span className="spanLast">Last Big</span>
             <p className="lastBig">{data.price2} ETH</p>
           </div>
-          {data ? (
-            <ComponentDetailUser user={data} />
-          ) : (
-            <span>Cargando usuarios...</span>
-          )}
+
+          <section className="componentDetailUser">
+            <figure className="sectionImageUser">
+              <img
+                src={
+                  data.pictureU ? (
+                    data.pictureU
+                  ) : (
+                    <span>Aún no se encuentra el autor</span>
+                  )
+                }
+                alt="imagen"
+              />
+            </figure>
+            <div className="sectionUserCreator">
+              <span>Creator</span>
+              <span>
+                <b>
+                  {data.nameU ? (
+                    data.nameU
+                  ) : (
+                    <span>Aún no se encuentra el autor</span>
+                  )}
+                </b>
+              </span>
+            </div>
+          </section>
 
           <div className="btnDecisions">
             {quantitySelected > 0 ? (

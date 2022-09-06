@@ -11,7 +11,7 @@ export function Contact({ contactLogos }) {
         </div>
         <div className="icons">
           {contactLogos.map((logo, i) => {
-            return <i key={`contactLogo${i}`} className={logo}></i>;
+            return <i key={`contactLogo-${i}`} className={logo}></i>;
           })}
         </div>
       </section>

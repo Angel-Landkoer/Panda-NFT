@@ -109,5 +109,39 @@
         display: none;
       }
     }
+    .componentDetailUser {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      width: 575px;
+      height: 100px;
+      padding: 15px;
+      margin: 20px 0;
+
+      font-size: 14px;
+
+      border-radius: 16px;
+      background-color: #272d37;
+
+      .sectionImageUser {
+        grid-area: sectionImageUser;
+
+        & img {
+          width: 75px;
+          height: 75px;
+
+          border-radius: 10px;
+        }
+      }
+
+      .sectionUserCreator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-area: sectionUserCreator;
+      }
+    }
   }
 }

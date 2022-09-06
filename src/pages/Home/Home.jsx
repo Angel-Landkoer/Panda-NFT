@@ -16,7 +16,7 @@ import { SectionCreateYourOwnNFT } from "../../components/SectionCreateYourOwnNF
 import { ContainerCardsNFT } from "../../components/ContainerCardsNFT/ContainerCardsNFT";
 import { CardsNFT } from "../../components/CardsNFT/CardsNFT";
 
-import { SectionCreateSellNFT } from "../../components/SectionCreateSellNFT/SectionCreateSellNFT"; 
+import { SectionCreateSellNFT } from "../../components/SectionCreateSellNFT/SectionCreateSellNFT";
 
 // import styles
 import "./Home.scss";
@@ -139,7 +139,7 @@ export function Home() {
             <div className="containerCards_flex">
               {dataCardU.slice(1, moreOrLess).map((dataCard) => {
                 return (
-                  <CardsNFT key={dataCard.idC} dataCard={dataCard}>
+                  <CardsNFT key={`Home-${dataCard.idC}`} dataCard={dataCard}>
                     <Link to={`/CardsNFT/${dataCard.idC}`}>
                       <button>BSC</button>
                     </Link>
@@ -159,7 +159,7 @@ export function Home() {
             <div className="containerCards_flex">
               {dataCardU.slice(12, moreOrLess2).map((dataCard) => {
                 return (
-                  <CardsNFT key={dataCard.idC} dataCard={dataCard}>
+                  <CardsNFT key={`Home-${dataCard.passwordU}}`} dataCard={dataCard}>
                     <Link to={`/CardsNFT/${dataCard.idC}`}>
                       <button>BSC</button>
                     </Link>
@@ -186,12 +186,12 @@ export function Home() {
               {dataCardU.slice(5, moreOrLess3).map((dataCard) => {
                 return (
                   <CardsNFT
-                    key={`MultipleOptions ${dataCard.idC}`}
+                    key={`MultipleOptions-${dataCard.idC}`}
                     dataCard={dataCard}
                   >
                     <Link to={`/CardsNFT/${dataCard.idC}`}>
                       <button>BSC</button>
-                    </Link> 
+                    </Link>
                   </CardsNFT>
                 );
               })}

@@ -61,13 +61,13 @@ export function SectionDetail({ data }) {
         <section className="detailMore">
           <ul className="detailCategory ulStyle">
             {dataType.map((item, i) => (
-              <li key={i + 20}>{item}</li>
+              <li key={`detailCategory-${item}`}>{item}</li>
             ))}
           </ul>
 
           <ul className="detailDatas ulStyle">
             {datas.map((item, i) => (
-              <li key={i + 30}>{item}</li>
+              <li key={`detailDatas-${item}`}>{item}</li>
             ))}
           </ul>
         </section>

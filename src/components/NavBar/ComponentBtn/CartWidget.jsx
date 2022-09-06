@@ -26,7 +26,7 @@ export function CartWidget() {
         <div className={toggle ? "contentActive" : "contentHide"}>
           {cartProducts.map((item, i) => {
             return (
-              <div key={`context${i}`} className="context">
+              <div key={`context-${i}`} className="context">
                 {item.count > 1 ? (
                   <span className="spanCount">{item.count}</span>
                 ) : null}

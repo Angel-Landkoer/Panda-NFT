@@ -10,7 +10,7 @@ export function SectionCreateSellNFT({ cardsContext, title }) {
         <h2>{title}</h2>
         <div className="containeCards">
           {cardsContext.map((context, i) => {
-            return <Cards key={`CardsStatic${i}`} context={context} />;
+            return <Cards key={`CardsStatic-${i}`} context={context} />;
           })}
         </div>
       </section>

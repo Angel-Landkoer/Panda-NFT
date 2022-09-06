@@ -76,7 +76,7 @@ export function Details() {
               <div className="containerCards_flex">
                 {dataCardU.slice(13, 16).map((dataCard) => {
                   return (
-                    <CardsNFT key={dataCard.idC} dataCard={dataCard}>
+                    <CardsNFT key={`Details-${dataCard.idC}`} dataCard={dataCard}>
                       <Link to={`/CardsNFT/${dataCard.idC}`}>
                         <button>BSC</button>
                       </Link>

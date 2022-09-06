@@ -8,7 +8,7 @@ export function Resources({ resources }) {
         <h4>Resources</h4>
         <ul>
           {resources.map((resource, i) => {
-            return <li key={`resource${i}`}>{resource}</li>;
+            return <li key={`resource-${i}`}>{resource}</li>;
           })}
         </ul>
       </section>

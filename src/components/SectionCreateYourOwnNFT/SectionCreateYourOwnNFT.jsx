@@ -6,7 +6,7 @@ export function SectionCreateYourOwnNFT({ sectionCreateYourOwnNFT }) {
     <>
       {sectionCreateYourOwnNFT.map((item, i) => {
         return (
-          <section key={`yourOwn${i}`} className="sectionCreateYourOwnNFT">
+          <section key={`yourOwn-${i}`} className="sectionCreateYourOwnNFT">
             <h3>{item.title}</h3>
             <p>{item.paragraph}</p>
             <button>{item.btn}</button>
