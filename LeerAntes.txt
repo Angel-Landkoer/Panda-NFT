@@ -49,4 +49,8 @@ Este archivo se genera con el objetivo de guiar donde se encuentra los component
     1. llamando a firebase desde: 
         1. CartContext: src/Context
         2. Detail: src/pages/Detal
-    2. Problemas con Firebase, el almacenar y usar se gasta rápido OJO
+    2. Problemas con Firebase, el almacenar y usar se gasta rápido OJO (solucionado)
+
+12. Crear colección de Órdene
+    1. Esta ruta se encuentra en src/components/Cart, pero se expresa en src/pages/CartAdd
+    2. NO hubo grander problemas

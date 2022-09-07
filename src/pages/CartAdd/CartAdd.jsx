@@ -87,7 +87,10 @@ export function CartAdd() {
               {cartProducts.length > 0 ? (
                 cartProducts.map((item) => {
                   return (
-                    <section key={`CartAdd-${item.idC}`} className="controlCard">
+                    <section
+                      key={`CartAdd-${item.idC}`}
+                      className="controlCard"
+                    >
                       <CardsNFT dataCard={item} />
 
                       <button
@@ -102,31 +105,34 @@ export function CartAdd() {
                 })
               ) : (
                 <div className="noCards">
-                  <span>No hay producto en el carrito</span>
+                  <span>There are no products in the cart</span>
                   <Link to="/">
-                    <button>Volver al home</button>
+                    <button>Back to Home</button>
                   </Link>
                 </div>
               )}
             </section>
             <section className="payForAll">
               <button onClick={() => setShowModal(true)}>Go to checkout</button>
-              <div className="totalPriceCard">
-                <h3>Resume del pedido</h3>
+              <section className="totalPriceCard">
+                <h3>Order summary</h3>
                 {cartProducts.map((cardPrice) => {
                   return (
-                    <div key={`CardAdd-${cardPrice.titleC}`} className="dataTotal">
+                    <div
+                      key={`CardAdd-${cardPrice.titleC}`}
+                      className="dataTotal"
+                    >
                       <span>{`Title: ${cardPrice.titleC}`}</span>
                       <span>{`Price: ${cardPrice.price1}`}</span>
                     </div>
                   );
                 })}
                 <span className="total">{`Total pressure: ${totalPrice}`}</span>
-              </div>
+              </section>
             </section>
             {showModal && (
               <Modal>
-                <h2>Datos de Contacto</h2>
+                <h2>Contact Details</h2>
                 {success ? (
                   <>
                     <div className="successTrue">
@@ -150,7 +156,7 @@ export function CartAdd() {
                     </span>
                     <form onSubmit={handleSubmitData}>
                       <label id="formName">
-                        <span>Nombre</span>
+                        <span>Name</span>
                         <input
                           type="text"
                           name="formName"
@@ -163,7 +169,7 @@ export function CartAdd() {
                       </label>
 
                       <label id="formPhone">
-                        <span>Numero de celular</span>
+                        <span>Phone number</span>
                         <input
                           type="number"
                           name="formPhone"
@@ -187,7 +193,7 @@ export function CartAdd() {
                           value={formData.formEmail}
                         />
                       </label>
-                      <button type="submit">Enviar informacion</button>
+                      <button type="submit">Submit information</button>
                     </form>
                   </>
                 )}

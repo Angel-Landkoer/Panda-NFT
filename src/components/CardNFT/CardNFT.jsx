@@ -16,18 +16,18 @@ export function CardNFT({ description, image }) {
             src="https://randomuser.me/api/portraits/women/85.jpg"
             alt="informacion de la card"
           />
-          <div className="sectionCreator">
+          <section className="sectionCreator">
             <span>Creator</span>
             <span>
               <b>beautifulpanda941</b>
             </span>
-          </div>
-          <div className="sectionPrice">
+          </section>
+          <section className="sectionPrice">
             <span>Current Bid</span>
             <span>
               <b>{238}</b>
             </span>
-          </div>
+          </section>
         </section>
       </section>
     </>

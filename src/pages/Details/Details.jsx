@@ -26,6 +26,15 @@ export function Details() {
   const [itemCard1, setItemCard1] = useState(null);
   const [itemCards2, setItemCard2] = useState(null);
 
+  // More View
+  const [moreOrLess, setMoreOrLess] = useState(16);
+  const [moreOrLessToggle, setMoreOrLessToggle] = useState(false);
+
+  const handleMoreContainerCards = () => {
+    setMoreOrLessToggle(!moreOrLessToggle);
+    moreOrLessToggle ? setMoreOrLess(16) : setMoreOrLess(19);
+  };
+
   useEffect(() => {
     // cards-ID  firebase
 
@@ -58,32 +67,37 @@ export function Details() {
             {itemCard1 ?? itemCards2 ? (
               <SectionCardDetail data={itemCard1 ?? itemCards2} />
             ) : (
-              <h4>Cargando detalles...</h4>
+              <h4>Loading Details...</h4>
             )}
 
             {itemCard1 ?? itemCards2 ? (
               <SectionDetail data={itemCard1 ?? itemCards2} />
             ) : (
-              <h4>Cargando otros detalles...</h4>
+              <h4>Loading Other Details...</h4>
             )}
 
             <ContainerCardsNFT>
-              <div className="titleBtn_flex">
+              <section className="titleBtn_flex">
                 <h3>Another NFTs</h3>
-                <button>View More</button>
-              </div>
+                <button onClick={handleMoreContainerCards}>
+                  {moreOrLessToggle ? "View Less" : "View More"}
+                </button>
+              </section>
 
-              <div className="containerCards_flex">
-                {dataCardU.slice(13, 16).map((dataCard) => {
+              <section className="containerCards_flex">
+                {dataCardU.slice(13, moreOrLess).map((dataCard) => {
                   return (
-                    <CardsNFT key={`Details-${dataCard.idC}`} dataCard={dataCard}>
+                    <CardsNFT
+                      key={`Details-${dataCard.idC}`}
+                      dataCard={dataCard}
+                    >
                       <Link to={`/CardsNFT/${dataCard.idC}`}>
                         <button>BSC</button>
                       </Link>
                     </CardsNFT>
                   );
                 })}
-              </div>
+              </section>
             </ContainerCardsNFT>
           </CardDetailsContainer>
         </section>

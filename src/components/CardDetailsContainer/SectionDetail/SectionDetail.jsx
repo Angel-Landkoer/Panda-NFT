@@ -56,7 +56,7 @@ export function SectionDetail({ data }) {
         {data.user ? (
           <p>{data.user.description}</p>
         ) : (
-          <p>Datos de description no encontrados</p>
+          <p>Description data not found</p>
         )}
         <section className="detailMore">
           <ul className="detailCategory ulStyle">

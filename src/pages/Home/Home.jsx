@@ -130,13 +130,13 @@ export function Home() {
           {/*        section         */}
 
           <ContainerCardsNFT>
-            <div className="titleBtn_flex">
+            <section className="titleBtn_flex">
               <h3>{title1}</h3>
               <button onClick={handleMoreContainerCards1}>
                 {moreOrLessToggle ? "View Less" : "View More"}
               </button>
-            </div>
-            <div className="containerCards_flex">
+            </section>
+            <section className="containerCards_flex">
               {dataCardU.slice(1, moreOrLess).map((dataCard) => {
                 return (
                   <CardsNFT key={`Home-${dataCard.idC}`} dataCard={dataCard}>
@@ -146,32 +146,35 @@ export function Home() {
                   </CardsNFT>
                 );
               })}
-            </div>
+            </section>
           </ContainerCardsNFT>
 
           <ContainerCardsNFT>
-            <div className="titleBtn_flex">
+            <section className="titleBtn_flex">
               <h3>{title2}</h3>
               <button onClick={handleMoreContainerCards2}>
                 {moreOrLessToggle2 ? "View Less" : "View More"}
               </button>
-            </div>
-            <div className="containerCards_flex">
+            </section>
+            <section className="containerCards_flex">
               {dataCardU.slice(12, moreOrLess2).map((dataCard) => {
                 return (
-                  <CardsNFT key={`Home-${dataCard.passwordU}}`} dataCard={dataCard}>
+                  <CardsNFT
+                    key={`Home-${dataCard.passwordU}}`}
+                    dataCard={dataCard}
+                  >
                     <Link to={`/CardsNFT/${dataCard.idC}`}>
                       <button>BSC</button>
                     </Link>
                   </CardsNFT>
                 );
               })}
-            </div>
+            </section>
           </ContainerCardsNFT>
 
           {/*    section        */}
           <ContainerMultipleOptionsCardsNFT>
-            <div className="titleBtn_flex">
+            <section className="titleBtn_flex">
               <h3>Hot NFTs</h3>
               <div className="optionsBtn">
                 <button className="btnMusic">Music</button>
@@ -181,8 +184,8 @@ export function Home() {
                 <button className="btnVideos">Videos</button>
                 <button className="btnMore">More</button>
               </div>
-            </div>
-            <div className="containerCards_flex">
+            </section>
+            <section className="containerCards_flex">
               {dataCardU.slice(5, moreOrLess3).map((dataCard) => {
                 return (
                   <CardsNFT
@@ -195,7 +198,7 @@ export function Home() {
                   </CardsNFT>
                 );
               })}
-            </div>
+            </section>
             <button className="viewMore" onClick={handleMoreContainerMultiple}>
               {moreOrLessToggle3 ? "View Less" : "View More"}
             </button>

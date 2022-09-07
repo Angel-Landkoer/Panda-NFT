@@ -25,18 +25,18 @@ export function CardsNFT({ children, dataCard }) {
 
         <section className="creatorNFT">
           <img src={dataCard.pictureU} alt="informacion de la card" />
-          <div className="containerCreator">
+          <section className="containerCreator">
             <span>Creator</span>
             <span>
               <b>{dataCard.nameU}</b>
             </span>
-          </div>
-          <div className="containerPrice">
+          </section>
+          <section className="containerPrice">
             <span>Current Bid</span>
             <span>
               <b>{dataCard.price2} ETH</b>
             </span>
-          </div>
+          </section>
         </section>
       </section>
     </>

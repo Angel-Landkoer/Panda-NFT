@@ -41,7 +41,7 @@ export function SectionCardDetail({ data }) {
                 alt="imagen"
               />
             </figure>
-            <div className="sectionUserCreator">
+            <section className="sectionUserCreator">
               <span>Creator</span>
               <span>
                 <b>
@@ -52,10 +52,10 @@ export function SectionCardDetail({ data }) {
                   )}
                 </b>
               </span>
-            </div>
+            </section>
           </section>
 
-          <div className="btnDecisions">
+          <section className="btnDecisions">
             {quantitySelected > 0 ? (
               <Link to="/CartAdd">
                 <button className="finishBuy">TERMINAR COMPRA</button>
@@ -68,7 +68,7 @@ export function SectionCardDetail({ data }) {
                 data={data}
               />
             )}
-          </div>
+          </section>
         </section>
       </section>
     </>
