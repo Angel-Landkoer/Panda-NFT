@@ -23,7 +23,7 @@ Los pasos para comenzar a hacer el Deploy son:
 2.  Instalar las dependencias usando npm desde la consola
 
 ```shell
-npm install  o npm i
+npm i
 ```
 
 ## Construido con
@@ -34,6 +34,9 @@ npm install  o npm i
 - [Sass][2] - Preprocesador de CSS
 - [React][3] - Librería de JavaScript para construir interfaces de usuarios
 - [Node.js][4] -Entorno de ejecución de JavaScript
+
+## GIF con navegación
+![Gitf](https://firebasestorage.googleapis.com/v0/b/pandantfs.appspot.com/o/React%20App.gif?alt=media&token=ebcba718-726e-4c84-b232-22c03362f00f)
 
 ## Autores
 
