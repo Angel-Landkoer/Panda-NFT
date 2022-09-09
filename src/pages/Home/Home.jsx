@@ -55,8 +55,6 @@ export function Home() {
 
   // del componente ContainercardsNFT
 
-  // const titles = ["Live Auctions", "Featured Artist"];
-
   const titles = {
     title1: "Live Auctions",
     title2: "Featured Artist",
@@ -117,17 +115,13 @@ export function Home() {
         </section>
       </header>
       <main>
-        {/*       section        */}
         <section className="mainHome">
           <SectionLogos logos={logos} />
 
-          {/*        section        */}
           <SectionCreateSellNFT
             cardsContext={cardsContext}
             title={"Create and sell your NFTs"}
           />
-
-          {/*        section         */}
 
           <ContainerCardsNFT>
             <section className="titleBtn_flex">
@@ -172,7 +166,6 @@ export function Home() {
             </section>
           </ContainerCardsNFT>
 
-          {/*    section        */}
           <ContainerMultipleOptionsCardsNFT>
             <section className="titleBtn_flex">
               <h3>Hot NFTs</h3>
@@ -204,7 +197,6 @@ export function Home() {
             </button>
           </ContainerMultipleOptionsCardsNFT>
 
-          {/*    section        */}
           <SectionCreateYourOwnNFT
             sectionCreateYourOwnNFT={sectionCreateYourOwnNFT}
           />

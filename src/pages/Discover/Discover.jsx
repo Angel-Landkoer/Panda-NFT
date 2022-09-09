@@ -18,7 +18,7 @@ export function Discover() {
 
   //
 
-  const [algo, setAlgo] = useState([...dataCardU]);
+  const [filterCard, setFilterCard] = useState([...dataCardU]);
   const [toggle, setToggle] = useState(true);
   const [stock, setStock] = useState([]);
 
@@ -41,8 +41,7 @@ export function Discover() {
   let filterWords = [];
 
   const handleChangeCategory = (e) => {
-    // alert(e.target.name.toLowerCase());
-    filterWords = algo.filter((card) =>
+    filterWords = filterCard.filter((card) =>
       card.titleC.toLowerCase().includes(e.target.name.toLowerCase())
     );
     setToggle(!toggle);
