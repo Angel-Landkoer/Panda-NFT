@@ -36,7 +36,8 @@ npm i
 - [Node.js][4] -Entorno de ejecución de JavaScript
 
 ## GIF con navegación
-![Gitf](https://firebasestorage.googleapis.com/v0/b/pandantfs.appspot.com/o/React%20App.gif?alt=media&token=ebcba718-726e-4c84-b232-22c03362f00f)
+
+![Gif](https://firebasestorage.googleapis.com/v0/b/pandantfs.appspot.com/o/react-app_r1JiNPZa.gif?alt=media&token=751e9ffe-61da-4927-87fe-bcce58f654cd)
 
 ## Autores
 
