@@ -70,7 +70,6 @@ export function CartAdd() {
     const collectionOrder = collection(db, "Order");
     const orderDoc = await addDoc(collectionOrder, newOrder);
     setSuccess(orderDoc.id);
-    console.log("Orden Generada: ", orderDoc);
   }
 
   return (
